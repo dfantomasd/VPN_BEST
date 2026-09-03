@@ -1,0 +1,58 @@
+name: Subscription
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: subscription-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+
+  refresh:
+    needs: validate
+    if: >-
+      vars.ENABLE_SUBSCRIPTION_REFRESH == 'true' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh from owner-configured source
+        env:
+          SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
+          DIRECT_EXTRA_DOMAINS: ${{ vars.DIRECT_EXTRA_DOMAINS }}
+        run: python scripts/refresh_subscription.py
+      - run: python -m unittest discover -s tests -v
+      - name: Commit catalog
+        run: |
+          if git diff --quiet -- whitelist_configs_combined.json; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add whitelist_configs_combined.json
+          git commit -m 'Update subscription catalog'
+          git push origin HEAD:main
