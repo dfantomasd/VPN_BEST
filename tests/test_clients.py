@@ -46,11 +46,15 @@ class ClientTests(unittest.TestCase):
         self.assertIn('geosite:category-ru', decoded['DirectSites'])
         self.assertIn('geoip:ru', decoded['DirectIp'])
         self.assertNotIn('happ://routing/off', self.outputs['subscription.txt'])
+        self.assertIn('#subscription-ping-onopen-enabled: 1', lines)
+        self.assertIn('#subscriptions-sort-type: ping', lines)
+        self.assertIn('#profile-update-interval: 1', lines)
 
     def test_happ_credentials_preserved(self):
         exported = [line for line in self.outputs['subscription.txt'].splitlines()
                     if line.startswith(('vless://', 'hysteria2://'))]
         selected, _ = clients.foreign_nodes(self.catalog)
+        selected = clients.ranked_nodes(selected)
         self.assertEqual(len(exported), len(selected))
         for (name, outbound), link in zip(selected, exported):
             url = urllib.parse.urlsplit(link)
@@ -71,7 +75,9 @@ class ClientTests(unittest.TestCase):
         self.assertEqual(self.karing['rules'][-1], 'MATCH,VPN_BEST')
         names = [p['name'] for p in self.karing['proxies']]
         self.assertEqual(len(names), len(set(names)))
-        self.assertEqual(set(self.karing['proxy-groups'][0]['proxies']), set(names))
+        self.assertEqual(set(self.karing['proxy-groups'][0]['proxies'][1:]), set(names))
+        self.assertEqual(self.karing['proxy-groups'][1]['type'], 'url-test')
+        self.assertEqual(set(self.karing['proxy-groups'][1]['proxies']), set(names))
         self.assertNotIn('DIRECT', self.karing['proxy-groups'][0]['proxies'])
         self.assertNotIn('dns', self.karing)  # Karing ignores subscription DNS
 

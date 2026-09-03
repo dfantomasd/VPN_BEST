@@ -32,6 +32,7 @@ jobs:
       vars.ENABLE_SUBSCRIPTION_REFRESH == 'true' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:
@@ -48,6 +49,17 @@ jobs:
         run: python scripts/refresh_subscription.py
       - name: Rebuild client subscriptions and Russia rules
         run: python scripts/build_clients.py --refresh-rules
+      - name: Install pinned Mihomo for bounded network tests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v1.19.30 --repo MetaCubeX/mihomo --pattern mihomo-linux-amd64-v1-v1.19.30.gz --dir "$RUNNER_TEMP"
+          gzip -d "$RUNNER_TEMP/mihomo-linux-amd64-v1-v1.19.30.gz"
+          chmod u+x "$RUNNER_TEMP/mihomo-linux-amd64-v1-v1.19.30"
+      - name: Measure servers (256 KiB maximum download sample per node)
+        run: python scripts/measure_nodes.py --mihomo "$RUNNER_TEMP/mihomo-linux-amd64-v1-v1.19.30"
+      - name: Publish measured order and annotations
+        run: python scripts/build_clients.py
       - run: python -m unittest discover -s tests -v
       - name: Commit catalog
         run: |
@@ -56,6 +68,6 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add whitelist_configs_combined.json subscription.txt subscription_karing.txt routing_russia.json build_report.json rules/
+          git add whitelist_configs_combined.json subscription.txt subscription_karing.txt routing_russia.json build_report.json measurements.json rules/
           git commit -m 'Update subscription catalog'
           git push origin HEAD:main

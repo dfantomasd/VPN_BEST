@@ -36,6 +36,31 @@ def json_text(value):
     return json.dumps(value, ensure_ascii=False, indent=2) + "\n"
 
 
+def node_key(outbound):
+    data = json.dumps({k: v for k, v in outbound.items() if k != "tag"}, sort_keys=True)
+    return hashlib.sha256(data.encode()).hexdigest()
+
+
+def ranked_nodes(selected):
+    path = ROOT / "measurements.json"
+    measurements = read_json(path).get("nodes", {}) if path.exists() else {}
+    def score(item):
+        metric = measurements.get(node_key(item[1]), {})
+        if metric.get("status") != "ok":
+            return -1
+        return metric["speed_mbps"] / (1 + metric["latency_ms"] / 200)
+    ranked = sorted(selected, key=score, reverse=True)
+    decorated = []
+    for index, (name, outbound) in enumerate(ranked):
+        metric = measurements.get(node_key(outbound), {})
+        if metric.get("status") == "ok":
+            label = f"тест GitHub: ≈{metric['speed_mbps']:.2f} Мбит/с · {metric['latency_ms']} мс"
+        else:
+            label = "тест GitHub: нет замера"
+        decorated.append((name + " | " + label, outbound))
+    return decorated
+
+
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -309,19 +334,24 @@ def build():
     catalog = read_json(ROOT / "whitelist_configs_combined.json")
     policy = routing_policy(catalog)
     selected, russian_excluded = foreign_nodes(catalog)
+    selected = ranked_nodes(selected)
     converted = [connection(name, outbound) for name, outbound in selected]
     routing = "happ://routing/onadd/" + base64.b64encode(
         json.dumps(policy, ensure_ascii=False, separators=(",", ":")).encode()).decode()
-    happ = "#profile-title: VPN_BEST Russia\n" + routing + "\n"
+    happ = ("#profile-title: VPN_BEST Russia\n"
+            "#subscription-ping-onopen-enabled: 1\n"
+            "#subscriptions-sort-type: ping\n"
+            "#profile-update-interval: 1\n" + routing + "\n")
     happ += "\n".join(link for link, _ in converted) + "\n"
     proxies = [proxy for _, proxy in converted if proxy is not None]
     names = [p["name"] for p in proxies]
-    # Default to a conventional foreign TCP node, not an unverified XHTTP endpoint.
-    foreign_tcp = [p["name"] for p in proxies if p["type"] == "vless" and p["network"] == "tcp"
-                   and "Россия" not in p["name"] and "🇷🇺" not in p["name"]]
-    choices = foreign_tcp + [n for n in names if n not in foreign_tcp]
+    choices = names  # Measured best stays first in both the list and selector.
+    auto = "🏆 Автовыбор на устройстве"
     config = {"mode": "rule", "proxies": proxies,
-              "proxy-groups": [{"name": "VPN_BEST", "type": "select", "proxies": choices}],
+              "proxy-groups": [{"name": "VPN_BEST", "type": "select", "proxies": [auto] + choices},
+                               {"name": auto, "type": "url-test", "proxies": choices,
+                                "url": "https://www.gstatic.com/generate_204", "interval": 600,
+                                "tolerance": 50}],
               "rules": expanded_rules(policy, read_json(ROOT / "rules/category-ru.json"),
                                       read_json(ROOT / "rules/geoip-ru.json"))}
     excluded = [urllib.parse.unquote(urllib.parse.urlsplit(link).fragment)
@@ -329,7 +359,7 @@ def build():
     report = {"happ_nodes": len(converted), "karing_nodes": len(proxies),
               "karing_rules": len(config["rules"]), "karing_excluded_advanced_xhttp": excluded,
               "excluded_russian_or_unknown_servers": russian_excluded,
-              "network_tested": False,
+              "measurements_available": (ROOT / "measurements.json").exists(),
               "note": "URI exports expand balancers into individual nodes; Karing XHTTP requires device testing."}
     return {"subscription.txt": happ, "subscription_karing.txt": yaml_document(config),
             "routing_russia.json": json_text(policy), "build_report.json": json_text(report)}
