@@ -110,12 +110,12 @@ def routing_policy(catalog):
 
 
 def nodes(catalog):
-    """Prefer named single-server entries; expand balancers without inventing chains."""
+    """Export VLESS only, including during DNS checks and hourly measurements."""
     result, seen = [], set()
-    ordered = sorted(catalog, key=lambda c: sum(o.get("protocol") not in ("freedom", "blackhole")
+    ordered = sorted(catalog, key=lambda c: sum(o.get("protocol") == "vless"
                                               for o in c["outbounds"]) != 1)
     for config in ordered:
-        proxies = [o for o in config["outbounds"] if o.get("protocol") not in ("freedom", "blackhole")]
+        proxies = [o for o in config["outbounds"] if o.get("protocol") == "vless"]
         for number, outbound in enumerate(proxies, 1):
             signature = json.dumps({k: v for k, v in outbound.items() if k != "tag"}, sort_keys=True)
             if signature in seen:
@@ -126,7 +126,7 @@ def nodes(catalog):
                 name += f" / endpoint {number}"
             result.append((name, outbound))
     if not result:
-        raise ValueError("No proxy nodes")
+        raise ValueError("No VLESS nodes")
     return result
 
 
@@ -356,7 +356,7 @@ def build():
                                       read_json(ROOT / "rules/geoip-ru.json"))}
     excluded = [urllib.parse.unquote(urllib.parse.urlsplit(link).fragment)
                 for link, proxy in converted if proxy is None]
-    report = {"happ_nodes": len(converted), "karing_nodes": len(proxies),
+    report = {"allowed_protocols": ["vless"], "happ_nodes": len(converted), "karing_nodes": len(proxies),
               "karing_rules": len(config["rules"]), "karing_excluded_advanced_xhttp": excluded,
               "excluded_russian_or_unknown_servers": russian_excluded,
               "measurements_available": (ROOT / "measurements.json").exists(),

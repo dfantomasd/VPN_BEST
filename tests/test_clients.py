@@ -152,6 +152,19 @@ class ClientTests(unittest.TestCase):
             if line.startswith(('vless://', 'hysteria2://')):
                 self.assertNotIn(urllib.parse.urlsplit(line).hostname, denied_hosts)
 
+    def test_subscriptions_vless_only(self):
+        links = [line for line in self.outputs['subscription.txt'].splitlines()
+                 if line and not line.startswith(('#', 'happ://routing/'))]
+        self.assertTrue(links)
+        self.assertTrue(all(link.startswith('vless://') for link in links))
+        self.assertTrue(all(proxy['type'] == 'vless' for proxy in self.karing['proxies']))
+
+    def test_non_vless_filtered_before_conversion(self):
+        vless = {'protocol': 'vless', 'tag': 'proxy'}
+        catalog = [{'remarks': 'mixed', 'outbounds': [vless, {'protocol': 'hysteria'},
+                    {'protocol': 'trojan'}, {'protocol': 'vmess'}, {'protocol': 'shadowsocks'}]}]
+        self.assertEqual(clients.nodes(catalog), [('mixed', vless)])
+
 
 if __name__ == '__main__':
     unittest.main()
