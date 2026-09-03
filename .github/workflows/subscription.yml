@@ -24,6 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
+      - run: python scripts/build_clients.py --check
 
   refresh:
     needs: validate
@@ -45,14 +46,16 @@ jobs:
           SUBSCRIPTION_URL: ${{ secrets.SUBSCRIPTION_URL }}
           DIRECT_EXTRA_DOMAINS: ${{ vars.DIRECT_EXTRA_DOMAINS }}
         run: python scripts/refresh_subscription.py
+      - name: Rebuild client subscriptions and Russia rules
+        run: python scripts/build_clients.py --refresh-rules
       - run: python -m unittest discover -s tests -v
       - name: Commit catalog
         run: |
-          if git diff --quiet -- whitelist_configs_combined.json; then
+          if git diff --quiet; then
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add whitelist_configs_combined.json
+          git add whitelist_configs_combined.json subscription.txt subscription_karing.txt routing_russia.json build_report.json rules/
           git commit -m 'Update subscription catalog'
           git push origin HEAD:main
