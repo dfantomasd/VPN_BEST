@@ -339,7 +339,7 @@ def build():
     routing = "happ://routing/onadd/" + base64.b64encode(
         json.dumps(policy, ensure_ascii=False, separators=(",", ":")).encode()).decode()
     happ = ("#profile-title: VPN_BEST Russia\n"
-            "#subscription-ping-onopen-enabled: 1\n"
+            "#subscription-ping-onopen-enabled: 0\n"
             "#subscriptions-sort-type: ping\n"
             "#profile-update-interval: 1\n" + routing + "\n")
     happ += "\n".join(link for link, _ in converted) + "\n"

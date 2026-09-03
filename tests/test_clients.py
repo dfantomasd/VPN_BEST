@@ -46,7 +46,7 @@ class ClientTests(unittest.TestCase):
         self.assertIn('geosite:category-ru', decoded['DirectSites'])
         self.assertIn('geoip:ru', decoded['DirectIp'])
         self.assertNotIn('happ://routing/off', self.outputs['subscription.txt'])
-        self.assertIn('#subscription-ping-onopen-enabled: 1', lines)
+        self.assertIn('#subscription-ping-onopen-enabled: 0', lines)
         self.assertIn('#subscriptions-sort-type: ping', lines)
         self.assertIn('#profile-update-interval: 1', lines)
 
