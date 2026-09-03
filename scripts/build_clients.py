@@ -207,6 +207,38 @@ def foreign_nodes(catalog):
     return accepted, excluded
 
 
+def happ_json_configs(catalog):
+    """Preserve native Happ/Xray configs; filter whole profiles fail-closed.
+
+    Removing an outbound from a balancer or whitelist chain can change semantics,
+    so a profile is excluded if any of its VLESS endpoints is Russian/unknown.
+    """
+    accepted_nodes, excluded_nodes = foreign_nodes(catalog)
+    accepted_keys = {node_key(outbound) for _, outbound in accepted_nodes}
+    excluded_by_key = {node_key(outbound) for _, outbound in nodes(catalog)
+                       if node_key(outbound) not in accepted_keys}
+    result, excluded_profiles = [], []
+    for config in catalog:
+        proxy_outbounds = [outbound for outbound in config.get("outbounds", [])
+                           if outbound.get("protocol") not in ("freedom", "blackhole")]
+        reason = None
+        if not proxy_outbounds:
+            reason = "No proxy outbound"
+        elif any(outbound.get("protocol") != "vless" for outbound in proxy_outbounds):
+            reason = "Contains non-VLESS outbound"
+        elif any(node_key(outbound) in excluded_by_key for outbound in proxy_outbounds):
+            reason = "Contains Russian or location-unknown VLESS endpoint"
+        if reason:
+            excluded_profiles.append({"name": config.get("remarks", ""), "reason": reason})
+        else:
+            result.append(config)
+    if not result:
+        raise ValueError("No safe native Happ profiles remain")
+    if "Авто" not in result[0].get("remarks", ""):
+        raise ValueError("Native auto-balancer must remain first")
+    return result, excluded_profiles
+
+
 def connection(name, outbound):
     stream = outbound.get("streamSettings", {})
     if outbound.get("proxySettings") or stream.get("sockopt", {}).get("dialerProxy"):
@@ -336,13 +368,8 @@ def build():
     selected, russian_excluded = foreign_nodes(catalog)
     selected = ranked_nodes(selected)
     converted = [connection(name, outbound) for name, outbound in selected]
-    routing = "happ://routing/onadd/" + base64.b64encode(
-        json.dumps(policy, ensure_ascii=False, separators=(",", ":")).encode()).decode()
-    happ = ("#profile-title: VPN_BEST Russia\n"
-            "#subscription-ping-onopen-enabled: 0\n"
-            "#subscriptions-sort-type: ping\n"
-            "#profile-update-interval: 1\n" + routing + "\n")
-    happ += "\n".join(link for link, _ in converted) + "\n"
+    happ_configs, happ_excluded = happ_json_configs(catalog)
+    happ = json_text(happ_configs)
     proxies = [proxy for _, proxy in converted if proxy is not None]
     names = [p["name"] for p in proxies]
     choices = names  # Measured best stays first in both the list and selector.
@@ -356,7 +383,9 @@ def build():
                                       read_json(ROOT / "rules/geoip-ru.json"))}
     excluded = [urllib.parse.unquote(urllib.parse.urlsplit(link).fragment)
                 for link, proxy in converted if proxy is None]
-    report = {"allowed_protocols": ["vless"], "happ_nodes": len(converted), "karing_nodes": len(proxies),
+    report = {"allowed_protocols": ["vless"], "happ_format": "native Xray JSON array",
+              "happ_profiles": len(happ_configs), "happ_excluded_profiles": happ_excluded,
+              "karing_nodes": len(proxies),
               "karing_rules": len(config["rules"]), "karing_excluded_advanced_xhttp": excluded,
               "excluded_russian_or_unknown_servers": russian_excluded,
               "measurements_available": (ROOT / "measurements.json").exists(),

@@ -36,39 +36,19 @@ class ClientTests(unittest.TestCase):
             self.assertEqual((clients.ROOT / name).read_text(encoding='utf-8'), expected)
 
     def test_happ_russia_enabled(self):
-        lines = self.outputs['subscription.txt'].splitlines()
-        routing = [line for line in lines if line.startswith('happ://routing/onadd/')]
-        self.assertEqual(len(routing), 1)
-        decoded = json.loads(base64.b64decode(routing[0].split('/onadd/')[1], validate=True))
-        self.assertEqual(decoded, self.policy)
-        self.assertEqual(decoded['Name'], 'Russia')
-        self.assertEqual(decoded['GlobalProxy'], 'true')
-        self.assertIn('geosite:category-ru', decoded['DirectSites'])
-        self.assertIn('geoip:ru', decoded['DirectIp'])
-        self.assertNotIn('happ://routing/off', self.outputs['subscription.txt'])
-        self.assertIn('#subscription-ping-onopen-enabled: 0', lines)
-        self.assertIn('#subscriptions-sort-type: ping', lines)
-        self.assertIn('#profile-update-interval: 1', lines)
+        configs = json.loads(self.outputs['subscription.txt'])
+        self.assertTrue(configs)
+        for config in configs:
+            domains = [rule['domain'] for rule in config['routing']['rules']
+                       if rule.get('outboundTag') == 'direct' and 'domain' in rule]
+            self.assertTrue(domains)
+            self.assertIn('geosite:category-ru', domains[0])
+            self.assertIn('domain:ru', domains[0])
 
     def test_happ_credentials_preserved(self):
-        exported = [line for line in self.outputs['subscription.txt'].splitlines()
-                    if line.startswith(('vless://', 'hysteria2://'))]
-        selected, _ = clients.foreign_nodes(self.catalog)
-        selected = clients.ranked_nodes(selected)
-        self.assertEqual(len(exported), len(selected))
-        for (name, outbound), link in zip(selected, exported):
-            url = urllib.parse.urlsplit(link)
-            query = urllib.parse.parse_qs(url.query, keep_blank_values=True)
-            self.assertEqual(urllib.parse.unquote(url.fragment), name)
-            if outbound['protocol'] == 'vless':
-                peer = outbound['settings']['vnext'][0]
-                self.assertEqual(url.hostname, peer['address'])
-                self.assertEqual(url.port, peer['port'])
-                self.assertEqual(url.username, peer['users'][0]['id'])
-                stream = outbound['streamSettings']
-                if stream['network'] == 'xhttp':
-                    self.assertEqual(query['mode'][0], stream['xhttpSettings']['mode'])
-                    self.assertEqual(json.loads(query['extra'][0]), stream['xhttpSettings']['extra'])
+        exported = json.loads(self.outputs['subscription.txt'])
+        expected, _ = clients.happ_json_configs(self.catalog)
+        self.assertEqual(exported, expected)
 
     def test_karing_groups_and_default(self):
         self.assertEqual(self.karing['mode'], 'rule')
@@ -149,15 +129,31 @@ class ClientTests(unittest.TestCase):
         for proxy in self.karing['proxies']:
             self.assertNotIn(proxy['server'], denied_hosts)
         for line in self.outputs['subscription.txt'].splitlines():
-            if line.startswith(('vless://', 'hysteria2://')):
-                self.assertNotIn(urllib.parse.urlsplit(line).hostname, denied_hosts)
+            self.assertNotIn('🇷🇺', line)
 
     def test_subscriptions_vless_only(self):
-        links = [line for line in self.outputs['subscription.txt'].splitlines()
-                 if line and not line.startswith(('#', 'happ://routing/'))]
-        self.assertTrue(links)
-        self.assertTrue(all(link.startswith('vless://') for link in links))
+        configs = json.loads(self.outputs['subscription.txt'])
+        protocols = [outbound['protocol'] for config in configs for outbound in config['outbounds']
+                     if outbound['protocol'] not in ('freedom', 'blackhole')]
+        self.assertTrue(protocols)
+        self.assertEqual(set(protocols), {'vless'})
         self.assertTrue(all(proxy['type'] == 'vless' for proxy in self.karing['proxies']))
+
+    def test_happ_native_auto_profile_preserved_first(self):
+        configs = json.loads(self.outputs['subscription.txt'])
+        self.assertIn('Авто', configs[0]['remarks'])
+        self.assertIn('burstObservatory', configs[0])
+        self.assertTrue(configs[0]['routing'].get('balancers'))
+        self.assertGreater(len([o for o in configs[0]['outbounds'] if o['protocol'] == 'vless']), 1)
+        source = next(c for c in self.catalog if 'Авто' in c['remarks'])
+        self.assertEqual(configs[0], source)
+
+    def test_happ_excludes_unsafe_profiles_whole(self):
+        configs, excluded = clients.happ_json_configs(self.catalog)
+        names = {config['remarks'] for config in configs}
+        self.assertFalse(any('Россия' in name or '🇷🇺' in name for name in names))
+        self.assertTrue(any(item['reason'] == 'Contains non-VLESS outbound' for item in excluded))
+        self.assertTrue(any(item['reason'].startswith('Contains Russian') for item in excluded))
 
     def test_non_vless_filtered_before_conversion(self):
         vless = {'protocol': 'vless', 'tag': 'proxy'}
