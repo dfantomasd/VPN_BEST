@@ -34,7 +34,8 @@ class MeasurementTests(unittest.TestCase):
         with patch.object(clients.Path, 'exists', return_value=True), patch.object(clients, 'read_json', return_value=metrics):
             result = clients.ranked_nodes([('first', first), ('second', second)])
         self.assertIs(result[0][1], second)
-        self.assertIn('тест GitHub', result[0][0])
+        self.assertIn('Лучший сервер', result[0][0])
+        self.assertNotIn('GitHub', result[0][0])
         self.assertIn('10.00 Мбит/с', result[0][0])
         self.assertIn('50 мс', result[0][0])
 

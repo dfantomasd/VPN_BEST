@@ -52,7 +52,10 @@ class ClientTests(unittest.TestCase):
 
     def test_karing_groups_and_default(self):
         self.assertEqual(self.karing['mode'], 'rule')
-        self.assertEqual(self.karing['rules'][-1], 'MATCH,VPN_BEST')
+        self.assertEqual(self.karing['rules'][-1], 'MATCH,DIMKA_VPN')
+        self.assertEqual(self.karing['proxy-groups'][0]['name'], 'DIMKA_VPN')
+        self.assertEqual(self.karing['proxy-groups'][0]['proxies'][0], clients.AUTO_NAME)
+        self.assertTrue(self.karing['proxy-groups'][0]['proxies'][1].startswith(clients.BEST_NAME))
         names = [p['name'] for p in self.karing['proxies']]
         self.assertEqual(len(names), len(set(names)))
         self.assertEqual(set(self.karing['proxy-groups'][0]['proxies'][1:]), set(names))
@@ -69,7 +72,7 @@ class ClientTests(unittest.TestCase):
                     return parts[2]
                 if parts[0] == 'DOMAIN-SUFFIX' and (domain == parts[1] or domain.endswith('.' + parts[1])):
                     return parts[2]
-            return 'VPN_BEST'
+            return 'DIMKA_VPN'
         for domain in ('sberbank.ru', 'online.sberbank.ru', 'tbank.ru', 'vtb.com',
                        'alfabank.ru', 'gosuslugi.ru', 'mos.ru', 'nspk.ru', 'ya.ru',
                        'ozon.ru', 'example.su', 'example.xn--p1ai'):
@@ -79,7 +82,7 @@ class ClientTests(unittest.TestCase):
                        'ipinfo.io', 'ifconfig.me', 'browserleaks.com', 'steampowered.com',
                        'sberbank.ru.attacker.example'):
             with self.subTest(domain=domain):
-                self.assertEqual(karing_route(domain), 'VPN_BEST')
+                self.assertEqual(karing_route(domain), 'DIMKA_VPN')
 
     def test_geodata_coverage(self):
         rules = set(self.karing['rules'])
@@ -145,12 +148,15 @@ class ClientTests(unittest.TestCase):
         self.assertIn('burstObservatory', configs[0])
         self.assertTrue(configs[0]['routing'].get('balancers'))
         self.assertGreater(len([o for o in configs[0]['outbounds'] if o['protocol'] == 'vless']), 1)
+        self.assertEqual(configs[0]['remarks'], clients.AUTO_NAME)
         source = next(c for c in self.catalog if 'Авто' in c['remarks'])
-        self.assertEqual(configs[0], source)
+        renamed = copy.deepcopy(configs[0])
+        renamed['remarks'] = source['remarks']
+        self.assertEqual(renamed, source)
 
     def test_happ_fastest_second_preserves_native_config(self):
         configs = json.loads(self.outputs['subscription.txt'])
-        self.assertIn('Авто по скорости', configs[1]['remarks'])
+        self.assertIn('Лучший сервер', configs[1]['remarks'])
         source = [c for c in configs[2:] if len([
             o for o in c['outbounds'] if o['protocol'] == 'vless']) == 1]
         self.assertGreaterEqual(len(source), 2)
@@ -171,6 +177,7 @@ class ClientTests(unittest.TestCase):
         for metrics in ({}, {clients.node_key(o): {'status': 'unavailable',
                          'speed_mbps': 999} for c in configs for o in c['outbounds']}):
             fallback = clients.happ_fastest_profile(configs, metrics)
+            self.assertIn('Лучший сервер', fallback['remarks'])
             self.assertIn('нет замера', fallback['remarks'])
             fallback['remarks'] = configs[0]['remarks']
             self.assertEqual(fallback, configs[0])

@@ -18,6 +18,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/"
+VPN_NAME = "DIMKA_VPN"
+AUTO_NAME = "⚡ Авто по скорости"
+BEST_NAME = "🏆 Лучший сервер"
 GEO_BASE = "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/"
 RULE_SOURCES = {
     "category-ru.json": GEO_BASE + "geosite/category-ru.json",
@@ -56,10 +59,11 @@ def ranked_nodes(selected):
     for index, (name, outbound) in enumerate(ranked):
         metric = measurements.get(node_key(outbound), {})
         if metric.get("status") == "ok":
-            label = f"тест GitHub: ≈{metric['speed_mbps']:.2f} Мбит/с · {metric['latency_ms']} мс"
+            label = f"≈{metric['speed_mbps']:.2f} Мбит/с · {metric['latency_ms']} мс"
         else:
-            label = "тест GitHub: нет замера"
-        decorated.append((name + " | " + label, outbound))
+            label = "нет замера"
+        prefix = BEST_NAME + " | " if index == 0 else ""
+        decorated.append((prefix + name + " | " + label, outbound))
     return decorated
 
 
@@ -238,6 +242,8 @@ def happ_json_configs(catalog):
         raise ValueError("No safe native Happ profiles remain")
     if "Авто" not in result[0].get("remarks", ""):
         raise ValueError("Native auto-balancer must remain first")
+    result[0] = copy.deepcopy(result[0])
+    result[0]["remarks"] = AUTO_NAME
     path = ROOT / "measurements.json"
     metrics = read_json(path).get("nodes", {}) if path.exists() else {}
     result.insert(1, happ_fastest_profile(result, metrics))
@@ -262,11 +268,11 @@ def happ_fastest_profile(configs, metrics):
             candidates.append((speed, config, metric))
     if not candidates:
         profile = copy.deepcopy(configs[0])
-        profile["remarks"] = "⚡ Авто по скорости | нет замера — резерв Авто"
+        profile["remarks"] = BEST_NAME + " | нет замера — резерв Авто"
         return profile
     speed, winner, metric = max(candidates, key=lambda item: item[0])
     profile = copy.deepcopy(winner)
-    profile["remarks"] = (f"⚡ Авто по скорости | тест GitHub: ≈{speed:.2f} Мбит/с"
+    profile["remarks"] = (f"{BEST_NAME} | ≈{speed:.2f} Мбит/с"
                           f" · {metric.get('latency_ms', '?')} мс | {winner['remarks']}")
     return profile
 
@@ -377,7 +383,7 @@ def expanded_rules(policy, geo_sites, geo_ips):
     for cidr in sorted(ips):
         version = ipaddress.ip_network(cidr).version
         rules.append(("IP-CIDR6," if version == 6 else "IP-CIDR,") + cidr + ",DIRECT")
-    rules.append("MATCH,VPN_BEST")
+    rules.append("MATCH," + VPN_NAME)
     return rules
 
 
@@ -405,9 +411,9 @@ def build():
     proxies = [proxy for _, proxy in converted if proxy is not None]
     names = [p["name"] for p in proxies]
     choices = names  # Measured best stays first in both the list and selector.
-    auto = "🏆 Автовыбор на устройстве"
+    auto = AUTO_NAME
     config = {"mode": "rule", "proxies": proxies,
-              "proxy-groups": [{"name": "VPN_BEST", "type": "select", "proxies": [auto] + choices},
+              "proxy-groups": [{"name": VPN_NAME, "type": "select", "proxies": [auto] + choices},
                                {"name": auto, "type": "url-test", "proxies": choices,
                                 "url": "https://www.gstatic.com/generate_204", "interval": 600,
                                 "tolerance": 50}],
