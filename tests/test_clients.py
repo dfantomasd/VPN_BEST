@@ -148,6 +148,33 @@ class ClientTests(unittest.TestCase):
         source = next(c for c in self.catalog if 'Авто' in c['remarks'])
         self.assertEqual(configs[0], source)
 
+    def test_happ_fastest_second_preserves_native_config(self):
+        configs = json.loads(self.outputs['subscription.txt'])
+        self.assertIn('Авто по скорости', configs[1]['remarks'])
+        source = [c for c in configs[2:] if len([
+            o for o in c['outbounds'] if o['protocol'] == 'vless']) == 1]
+        self.assertGreaterEqual(len(source), 2)
+        metrics = {}
+        for config, speed, latency in zip(source[:2], (5, 10), (1, 2000)):
+            outbound = next(o for o in config['outbounds'] if o['protocol'] == 'vless')
+            metrics[clients.node_key(outbound)] = {
+                'status': 'ok', 'speed_mbps': speed, 'latency_ms': latency}
+        before = copy.deepcopy(source)
+        winner = clients.happ_fastest_profile([configs[0]] + source[:2], metrics)
+        self.assertIn('10.00 Мбит/с', winner['remarks'])
+        winner['remarks'] = source[1]['remarks']
+        self.assertEqual(winner, source[1])
+        self.assertEqual(source, before)
+
+    def test_happ_fastest_missing_or_failed_measurements(self):
+        configs = json.loads(self.outputs['subscription.txt'])
+        for metrics in ({}, {clients.node_key(o): {'status': 'unavailable',
+                         'speed_mbps': 999} for c in configs for o in c['outbounds']}):
+            fallback = clients.happ_fastest_profile(configs, metrics)
+            self.assertIn('нет замера', fallback['remarks'])
+            fallback['remarks'] = configs[0]['remarks']
+            self.assertEqual(fallback, configs[0])
+
     def test_happ_excludes_unsafe_profiles_whole(self):
         configs, excluded = clients.happ_json_configs(self.catalog)
         names = {config['remarks'] for config in configs}

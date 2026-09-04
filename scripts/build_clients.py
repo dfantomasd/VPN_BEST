@@ -4,6 +4,8 @@ No VPN connections are made. --refresh-rules downloads public classification dat
 """
 import argparse
 import base64
+import copy
+import math
 import hashlib
 import ipaddress
 import json
@@ -236,7 +238,37 @@ def happ_json_configs(catalog):
         raise ValueError("No safe native Happ profiles remain")
     if "Авто" not in result[0].get("remarks", ""):
         raise ValueError("Native auto-balancer must remain first")
+    path = ROOT / "measurements.json"
+    metrics = read_json(path).get("nodes", {}) if path.exists() else {}
+    result.insert(1, happ_fastest_profile(result, metrics))
     return result, excluded_profiles
+
+
+def happ_fastest_profile(configs, metrics):
+    """Select by measured throughput only; never rewrite native routing/DNS.
+
+    Inputs are already filtered safe profiles. Selection updates on rebuild,
+    not through an unsupported on-device bandwidth balancer.
+    """
+    candidates = []
+    for config in configs:
+        proxies = [o for o in config["outbounds"] if o.get("protocol") == "vless"]
+        if len(proxies) != 1:
+            continue
+        metric = metrics.get(node_key(proxies[0]), {})
+        speed = metric.get("speed_mbps")
+        if (metric.get("status") == "ok" and isinstance(speed, (int, float))
+                and not isinstance(speed, bool) and math.isfinite(speed) and speed > 0):
+            candidates.append((speed, config, metric))
+    if not candidates:
+        profile = copy.deepcopy(configs[0])
+        profile["remarks"] = "⚡ Авто по скорости | нет замера — резерв Авто"
+        return profile
+    speed, winner, metric = max(candidates, key=lambda item: item[0])
+    profile = copy.deepcopy(winner)
+    profile["remarks"] = (f"⚡ Авто по скорости | тест GitHub: ≈{speed:.2f} Мбит/с"
+                          f" · {metric.get('latency_ms', '?')} мс | {winner['remarks']}")
+    return profile
 
 
 def connection(name, outbound):
