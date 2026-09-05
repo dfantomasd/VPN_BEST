@@ -11,6 +11,15 @@
 https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/subscription.txt#DIMKA_VPN
 ```
 
+Если `raw.githubusercontent.com` не открывается у оператора, используйте резервное
+зеркало того же файла:
+
+```text
+https://cdn.jsdelivr.net/gh/dfantomasd/VPN_BEST@main/subscription.txt#DIMKA_VPN
+```
+
+После каждого обновления репозиторий автоматически очищает кэш зеркала.
+
 Файл — родной для Happ **JSON-массив полных Xray-конфигураций**, а не список
 преобразованных ссылок. Первым сохранён профиль **«⚡ Авто по скорости | страна»**:
 его 12 VLESS-выходов, least-load балансировщик, проверка каждые 2 минуты, fallback,
