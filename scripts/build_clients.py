@@ -278,8 +278,8 @@ def happ_fastest_profile(configs, metrics):
         return profile
     speed, winner, metric = max(candidates, key=lambda item: item[0])
     profile = copy.deepcopy(winner)
-    profile["remarks"] = (f"{BEST_NAME} | ≈{speed:.2f} Мбит/с"
-                          f" · {metric.get('latency_ms', '?')} мс | {winner['remarks']}")
+    profile["remarks"] = (f"{BEST_NAME} | {winner['remarks']} | ≈{speed:.2f} Мбит/с"
+                          f" · {metric.get('latency_ms', '?')} мс")
     return profile
 
 

@@ -152,7 +152,7 @@ class ClientTests(unittest.TestCase):
         self.assertTrue(configs[0]['routing'].get('balancers'))
         self.assertGreater(len([o for o in configs[0]['outbounds'] if o['protocol'] == 'vless']), 1)
         self.assertTrue(configs[0]['remarks'].startswith(clients.AUTO_NAME + ' | '))
-        self.assertEqual(configs[0]['remarks'].split(' | ', 1)[1], configs[1]['remarks'].split(' | ')[-1])
+        self.assertEqual(configs[0]['remarks'].split(' | ', 1)[1], configs[1]['remarks'].split(' | ')[1])
         source = next(c for c in self.catalog if 'Авто' in c['remarks'])
         renamed = copy.deepcopy(configs[0])
         renamed['remarks'] = source['remarks']
