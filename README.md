@@ -8,13 +8,13 @@
 Скопируйте ссылку целиком, откройте Happ → «+» → импорт из буфера обмена:
 
 ```text
-https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/subscription.txt#DIMKA_VPN
+https://dfantomasd.github.io/VPN_BEST/subscription.txt#DIMKA_VPN
 ```
 
-Если `raw.githubusercontent.com` не открывается у оператора, используйте резервное
-зеркало того же файла:
+Резервные адреса того же файла:
 
 ```text
+https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/subscription.txt#DIMKA_VPN
 https://cdn.jsdelivr.net/gh/dfantomasd/VPN_BEST@main/subscription.txt#DIMKA_VPN
 ```
 
