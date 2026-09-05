@@ -54,8 +54,11 @@ class ClientTests(unittest.TestCase):
         self.assertEqual(self.karing['mode'], 'rule')
         self.assertEqual(self.karing['rules'][-1], 'MATCH,DIMKA_VPN')
         self.assertEqual(self.karing['proxy-groups'][0]['name'], 'DIMKA_VPN')
-        self.assertEqual(self.karing['proxy-groups'][0]['proxies'][0], clients.AUTO_NAME)
+        self.assertTrue(self.karing['proxy-groups'][0]['proxies'][0].startswith(clients.AUTO_NAME + ' | '))
         self.assertTrue(self.karing['proxy-groups'][0]['proxies'][1].startswith(clients.BEST_NAME))
+        auto_country = self.karing['proxy-groups'][0]['proxies'][0].split(' | ', 1)[1]
+        best_country = self.karing['proxy-groups'][0]['proxies'][1].split(' | ')[1]
+        self.assertEqual(auto_country, best_country)
         names = [p['name'] for p in self.karing['proxies']]
         self.assertEqual(len(names), len(set(names)))
         self.assertEqual(set(self.karing['proxy-groups'][0]['proxies'][1:]), set(names))
@@ -148,7 +151,8 @@ class ClientTests(unittest.TestCase):
         self.assertIn('burstObservatory', configs[0])
         self.assertTrue(configs[0]['routing'].get('balancers'))
         self.assertGreater(len([o for o in configs[0]['outbounds'] if o['protocol'] == 'vless']), 1)
-        self.assertEqual(configs[0]['remarks'], clients.AUTO_NAME)
+        self.assertTrue(configs[0]['remarks'].startswith(clients.AUTO_NAME + ' | '))
+        self.assertEqual(configs[0]['remarks'].split(' | ', 1)[1], configs[1]['remarks'].split(' | ')[-1])
         source = next(c for c in self.catalog if 'Авто' in c['remarks'])
         renamed = copy.deepcopy(configs[0])
         renamed['remarks'] = source['remarks']

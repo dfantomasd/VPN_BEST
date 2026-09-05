@@ -67,6 +67,10 @@ def ranked_nodes(selected):
     return decorated
 
 
+def auto_name(country=None):
+    return AUTO_NAME + (" | " + country if country else " | страна определяется автоматически")
+
+
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -242,11 +246,13 @@ def happ_json_configs(catalog):
         raise ValueError("No safe native Happ profiles remain")
     if "Авто" not in result[0].get("remarks", ""):
         raise ValueError("Native auto-balancer must remain first")
-    result[0] = copy.deepcopy(result[0])
-    result[0]["remarks"] = AUTO_NAME
     path = ROOT / "measurements.json"
     metrics = read_json(path).get("nodes", {}) if path.exists() else {}
-    result.insert(1, happ_fastest_profile(result, metrics))
+    fastest = happ_fastest_profile(result, metrics)
+    country = fastest["remarks"].split(" | ")[-1] if "≈" in fastest["remarks"] else None
+    result[0] = copy.deepcopy(result[0])
+    result[0]["remarks"] = auto_name(country)
+    result.insert(1, fastest)
     return result, excluded_profiles
 
 
@@ -411,7 +417,8 @@ def build():
     proxies = [proxy for _, proxy in converted if proxy is not None]
     names = [p["name"] for p in proxies]
     choices = names  # Measured best stays first in both the list and selector.
-    auto = AUTO_NAME
+    best_country = selected[0][0].removeprefix(BEST_NAME + " | ").rsplit(" | ", 1)[0]
+    auto = auto_name(best_country)
     config = {"mode": "rule", "proxies": proxies,
               "proxy-groups": [{"name": VPN_NAME, "type": "select", "proxies": [auto] + choices},
                                {"name": auto, "type": "url-test", "proxies": choices,
