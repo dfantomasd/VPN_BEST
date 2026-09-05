@@ -249,7 +249,7 @@ def happ_json_configs(catalog):
     path = ROOT / "measurements.json"
     metrics = read_json(path).get("nodes", {}) if path.exists() else {}
     fastest = happ_fastest_profile(result, metrics)
-    country = fastest["remarks"].split(" | ")[-1] if "≈" in fastest["remarks"] else None
+    country = fastest["remarks"].split(" | ")[1] if "≈" in fastest["remarks"] else None
     result[0] = copy.deepcopy(result[0])
     result[0]["remarks"] = auto_name(country)
     result.insert(1, fastest)
