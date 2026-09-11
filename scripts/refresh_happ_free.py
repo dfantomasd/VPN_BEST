@@ -50,7 +50,7 @@ def main():
     if germany is None:
         raise RuntimeError("Known working Germany profile is missing from primary subscription")
     germany = copy.deepcopy(germany)
-    germany["remarks"] = "✅ Германия | подтверждена в Happ на LTE"
+    germany["remarks"] = "01 ✅ Германия | VLESS · TCP | работает на LTE"
     profiles.append(germany)
 
     support_outbounds = [
@@ -58,7 +58,15 @@ def main():
         for item in document["outbounds"]
         if item.get("tag") in {"direct", "block", "dns-out"}
     ]
-    for index, node in enumerate(proxy_nodes, start=1):
+    # Hysteria was selected by the upstream balancer but did not open Telegram
+    # on the owner's LTE. Put TCP/WebSocket VMess candidates before UDP-based
+    # Hysteria, retaining the upstream Russian test order within each protocol.
+    protocol_priority = {"vless": 0, "vmess": 1, "hysteria": 2}
+    ordered_nodes = sorted(
+        enumerate(proxy_nodes),
+        key=lambda pair: (protocol_priority.get(pair[1].get("protocol"), 9), pair[0]),
+    )
+    for position, (_, node) in enumerate(ordered_nodes, start=2):
         profile = copy.deepcopy(document)
         profile.pop("_meta", None)
         profile.pop("observatory", None)
@@ -71,7 +79,8 @@ def main():
                 rule.pop("balancerTag")
                 rule["outboundTag"] = "proxy"
         protocol = str(node.get("protocol", "proxy")).upper()
-        profile["remarks"] = f"FREE {index:02d} | {protocol}"
+        transport = str(node.get("streamSettings", {}).get("network", "TCP")).upper()
+        profile["remarks"] = f"{position:02d} ◻️ {protocol} · {transport} | кандидат"
         profiles.append(profile)
 
     # Expose every server as a normal Happ row. This also avoids relying on an
@@ -89,6 +98,11 @@ def main():
                 "proxies": len(proxy_nodes),
                 "profiles": len(profiles),
                 "first_profile": germany["remarks"],
+                "sort": [
+                    "device-confirmed profile first",
+                    "VMess over TCP/WebSocket candidates in upstream order",
+                    "Hysteria candidates in upstream order (demoted after LTE failure)",
+                ],
                 "probe_url": document["observatory"].get("probeURL"),
                 "probe_interval": document["observatory"].get("probeInterval"),
                 "format": "Individual Happ JSON profiles; upstream connection settings are preserved",
