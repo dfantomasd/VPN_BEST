@@ -1,0 +1,38 @@
+name: Experimental subscriptions
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: experimental-subscriptions
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Xray
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v26.3.27 --repo XTLS/Xray-core --pattern Xray-linux-64.zip --dir "$RUNNER_TEMP"
+          unzip -q "$RUNNER_TEMP/Xray-linux-64.zip" -d "$RUNNER_TEMP/xray-test"
+          chmod +x "$RUNNER_TEMP/xray-test/xray"
+      - run: python -m unittest discover -s tests -v
+      - name: Check Telegram MTProto and Instagram HTTPS
+        run: python scripts/experimental.py --xray "$RUNNER_TEMP/xray-test/xray"
+      - name: Publish isolated test feeds
+        run: |
+          git add experimental/report.json subscription_test_happ.txt subscription_test_karing.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh experimental Telegram and Instagram candidates'
+          git pull --rebase origin main
+          git push origin HEAD:main
