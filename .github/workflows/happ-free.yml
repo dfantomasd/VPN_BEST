@@ -31,8 +31,11 @@ jobs:
         run: |
           gh release download v26.3.27 --repo XTLS/Xray-core --pattern Xray-linux-64.zip --dir "$RUNNER_TEMP"
           unzip -q "$RUNNER_TEMP/Xray-linux-64.zip" -d "$RUNNER_TEMP/xray"
-          python -c 'import json,sys; json.dump(json.load(open("subscription_happ_free.txt"))[0], open(sys.argv[1], "w"))' "$RUNNER_TEMP/happ-free-xray.json"
-          "$RUNNER_TEMP/xray/xray" run -test -format json -c "$RUNNER_TEMP/happ-free-xray.json"
+          mkdir "$RUNNER_TEMP/happ-free-profiles"
+          python -c 'import json,sys,pathlib; [pathlib.Path(sys.argv[1], f"{i:03}.json").write_text(json.dumps(v)) for i,v in enumerate(json.load(open("subscription_happ_free.txt")))]' "$RUNNER_TEMP/happ-free-profiles"
+          for profile in "$RUNNER_TEMP"/happ-free-profiles/*.json; do
+            "$RUNNER_TEMP/xray/xray" run -test -format json -c "$profile"
+          done
       - name: Publish when changed
         run: |
           git add subscription_happ_free.txt happ_free_report.json
