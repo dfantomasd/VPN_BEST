@@ -41,8 +41,12 @@ def main():
     if not document["routing"].get("balancers"):
         raise RuntimeError("Happ auto-select balancer is missing")
 
+    # Happ subscription URLs expect a JSON array of full Xray profiles. The
+    # upstream file is a single native profile; importing the bare object makes
+    # Happ expose only its first outbound as "JSON 0".
+    document["remarks"] = "⚡ DIMKA_FREE | Автовыбор"
     OUTPUT.write_text(
-        json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps([document], ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     REPORT.write_text(
         json.dumps(

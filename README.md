@@ -8,7 +8,9 @@
 https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/subscription_happ_free.txt#DIMKA_FREE
 ```
 
-Файл зеркалирует без преобразования готовый Happ GLOBAL-профиль
+Файл помещает готовый Happ GLOBAL-профиль в массив подписки из одного профиля
+`⚡ DIMKA_FREE | Автовыбор`; параметры его соединений не изменяются. Он
+зеркалирует
 `BLACK_SS+All_RUS` из `igareck/vpn-configs-for-russia`. Источник обновляет и
 проверяет публичные конфигурации примерно раз в 2–4 часа; этот репозиторий
 проверяет источник раз в час. Встроенный observatory Happ повторно проверяет
