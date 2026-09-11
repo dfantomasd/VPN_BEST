@@ -51,8 +51,17 @@ jobs:
           DIRECT_EXTRA_DOMAINS: ${{ vars.DIRECT_EXTRA_DOMAINS }}
         run: python scripts/refresh_subscription.py
       - name: Rebuild client subscriptions and Russia rules
+        run: python scripts/build_clients.py --refresh-rules
+      - name: Install pinned Xray for full Liberty measurements
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python scripts/build_clients.py --refresh-rules
+          gh release download v26.3.27 --repo XTLS/Xray-core --pattern Xray-linux-64.zip --dir "$RUNNER_TEMP"
+          unzip -q "$RUNNER_TEMP/Xray-linux-64.zip" -d "$RUNNER_TEMP/xray"
+          chmod u+x "$RUNNER_TEMP/xray/xray"
+      - name: Rank complete Happ profiles by speed
+        run: |
+          python scripts/measure_happ_liberty.py --xray "$RUNNER_TEMP/xray/xray"
           python scripts/build_happ_liberty.py
       - name: Install pinned Mihomo for bounded network tests
         env:
@@ -73,6 +82,6 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add whitelist_configs_combined.json subscription.txt subscription_karing.txt subscription_happ_liberty.txt happ_liberty_report.json routing_russia.json build_report.json measurements.json rules/
+          git add whitelist_configs_combined.json subscription.txt subscription_karing.txt subscription_happ_liberty.txt happ_liberty_report.json happ_liberty_measurements.json routing_russia.json build_report.json measurements.json rules/
           git commit -m 'Update subscription catalog'
           git push origin HEAD:main

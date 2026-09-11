@@ -23,3 +23,19 @@ class HappLibertyTests(unittest.TestCase):
         }
         liberty.force_apps_through_proxy(config)
         self.assertEqual(config["routing"]["rules"][0]["balancerTag"], "auto")
+
+    def test_russia_routes_after_forced_apps(self):
+        config = {
+            "remarks": "Test",
+            "outbounds": [
+                {"tag": "proxy", "protocol": "vless"},
+                {"tag": "direct", "protocol": "freedom"},
+            ],
+            "routing": {"rules": []},
+        }
+        liberty.force_apps_through_proxy(config)
+        liberty.ensure_russia_direct(config)
+        rules = config["routing"]["rules"]
+        self.assertIn("domain:telegram.org", rules[0]["domain"])
+        self.assertIn("domain:ru", rules[2]["domain"])
+        self.assertEqual(rules[3]["ip"], ["geoip:ru"])
