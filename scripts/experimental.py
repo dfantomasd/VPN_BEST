@@ -36,7 +36,7 @@ def exact(s,n):
 def telegram(port, dc):
     # MTProto unencrypted req_pq_multi; validate response nonce, not just TCP.
     with socket.create_connection(('127.0.0.1',port),timeout=8) as s:
-        s.settimeout(8);s.sendall(b'\x05\x01\x00');assert exact(s,2)==b'\x05\x00'
+        s.settimeout(3);s.sendall(b'\x05\x01\x00');assert exact(s,2)==b'\x05\x00'
         s.sendall(b'\x05\x01\x00\x01'+socket.inet_aton(dc)+struct.pack('!H',443))
         h=exact(s,4);assert h[1]==0
         exact(s,4 if h[3]==1 else (16 if h[3]==4 else exact(s,1)[0]));exact(s,2)
@@ -61,10 +61,21 @@ def probe(item,binary):
                 r=subprocess.run(['curl','--silent','--socks5-hostname',f'127.0.0.1:{port}','--connect-timeout','5','--max-time','10','--max-filesize','2097152','-o',os.devnull,'-w','%{http_code}',url],capture_output=True,text=True)
                 result[label]={'http':r.stdout,'ok':r.returncode==0 and r.stdout in ('200','301','302')}
             result['telegram_dcs']={}
+            result['telegram_ms']={}
             for dc in ['149.154.175.50','149.154.167.51','149.154.175.100','149.154.167.91','91.108.56.130']:
-                try:result['telegram_dcs'][dc]=telegram(port,dc)
+                try:
+                    start=time.monotonic();result['telegram_dcs'][dc]=telegram(port,dc);result['telegram_ms'][dc]=round((time.monotonic()-start)*1000)
                 except Exception:result['telegram_dcs'][dc]=False
-            result['telegram_mtproto']=all(result['telegram_dcs'].values())
+                if not result['telegram_dcs'][dc]:break
+            result['telegram_mtproto']=len(result['telegram_dcs'])==5 and all(result['telegram_dcs'].values())
+            result['speed_mbps']=0
+            result['fast']=False
+            if result['telegram_mtproto'] and result['instagram_web']['ok']:
+                r=subprocess.run(['curl','--silent','--socks5-hostname',f'127.0.0.1:{port}','--connect-timeout','3','--max-time','8','--max-filesize','1048576','-o',os.devnull,'-w','%{http_code} %{size_download} %{time_total}','https://speed.cloudflare.com/__down?bytes=1048576'],capture_output=True,text=True)
+                try:
+                    code,size,seconds=r.stdout.split();result['speed_mbps']=round(float(size)*8/float(seconds)/1000000,2)
+                    result['fast']=r.returncode==0 and code=='200' and int(size)==1048576 and result['speed_mbps']>=5 and max(result['telegram_ms'].values())<=1500
+                except Exception:pass
         finally:
             proc.terminate()
             try:proc.wait(timeout=3)
@@ -90,17 +101,39 @@ def main():
                 if st['accepted']>=args.limit_per_source:break
         except Exception as e:st['error']=type(e).__name__
         stats.append(st)
+    # Test current primary single profiles as candidates; never modify primary feeds.
+    try:
+        primary=json.load(urllib.request.urlopen('https://raw.githubusercontent.com/dfantomasd/VPN_BEST/main/subscription.txt',timeout=20))
+        for c in primary:
+            outs=[o for o in c['outbounds'] if o['protocol']=='vless']
+            if len(outs)!=1:continue
+            out=json.loads(json.dumps(outs[0]));out['tag']='proxy'
+            key=hashlib.sha256(json.dumps(out,sort_keys=True).encode()).hexdigest()[:12]
+            if key not in items:items[key]=[key,out,['primary '+c['remarks']]]
+    except Exception as e:stats.append({'source':'primary','error':type(e).__name__})
     print('sources',stats,flush=True)
     results=[];passed=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         for result,out in pool.map(lambda item:probe(item,args.xray),items.values()):
             results.append(result)
-            if result['telegram_mtproto'] and result['instagram_web']['ok']:
-                name='TEST | '+result['sources'][0]+' | '+result['id'];c=config(out);c['remarks']=name;passed.append(c)
-            print(result['id'],result['telegram_mtproto'],result['instagram_web'],flush=True)
-    report={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'vantage':('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local Mac; not the user phone'),'scope':'Telegram MTProto req_pq_multi (five DC endpoints), Instagram HTTPS. No authenticated media or calls test.','sources':stats,'tested':len(results),'passed':len(passed),'results':results}
+            if result['fast']:
+                name='TEST | '+result['sources'][0]+' | '+result['id'];c=config(out);c['remarks']=name;passed.append((result,c))
+            print(result['id'],result['telegram_mtproto'],result['instagram_web'],result['speed_mbps'],result['fast'],flush=True)
+    # A second independent connection/sample is required before publishing.
+    confirmed=[]
+    for first,c in passed:
+        second,_=probe([first['id'],c['outbounds'][0],first['sources']],args.xray)
+        first['repeat']=second
+        if second['fast']:
+            first['speed_mbps']=min(first['speed_mbps'],second['speed_mbps'])
+            c['remarks']=f"TEST | {first['speed_mbps']:.1f} Mbps | {first['sources'][0]} | {first['id']}"
+            confirmed.append((first,c))
+    passed=confirmed
+    report={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'vantage':('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local Mac; not the user phone'),'selection':'two passes; all five Telegram handshakes <=1500ms; complete 1MiB download >=5Mbps; Instagram HTTPS success', 'scope':'Telegram MTProto req_pq_multi (five DC endpoints), Instagram HTTPS. No authenticated media or calls test.','sources':stats,'tested':len(results),'passed':len(passed),'results':results}
     (ROOT/'experimental/report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     if not passed:raise SystemExit('No passing nodes; previous subscriptions preserved')
+    passed.sort(key=lambda pair:pair[0]['speed_mbps'],reverse=True)
+    passed=[c for result,c in passed]
     (ROOT/'subscription_test_happ.txt').write_text(json.dumps(passed,ensure_ascii=False,indent=2)+'\n')
     from build_clients import connection,yaml_document
     proxies=[connection(c['remarks'],c['outbounds'][0])[1] for c in passed]
