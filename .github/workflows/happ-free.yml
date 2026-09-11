@@ -1,0 +1,43 @@
+name: Free Happ subscription
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: free-happ-subscription
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Mirror current Happ-native profile
+        run: python scripts/refresh_happ_free.py
+      - name: Validate with pinned Xray
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v26.3.27 --repo XTLS/Xray-core --pattern Xray-linux-64.zip --dir "$RUNNER_TEMP"
+          unzip -q "$RUNNER_TEMP/Xray-linux-64.zip" -d "$RUNNER_TEMP/xray"
+          "$RUNNER_TEMP/xray/xray" run -test -format json -c subscription_happ_free.txt
+      - name: Publish when changed
+        run: |
+          git add subscription_happ_free.txt happ_free_report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh free Happ auto-select subscription'
+          git pull --rebase origin main
+          git push origin HEAD:main
