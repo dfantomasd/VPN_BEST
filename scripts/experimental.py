@@ -20,6 +20,8 @@ def parse(uri):
 
 def config(out,port=None):
     c={'log':{'loglevel':'none'},'outbounds':[out,{'tag':'direct','protocol':'freedom'}], 'routing':{'rules':[{'type':'field','network':'tcp,udp','outboundTag':'proxy'}]}}
+    c['dns']={'servers':['https://8.8.8.8/dns-query','https://8.8.4.4/dns-query'],'queryStrategy':'UseIP'}
+    if port is None: port=10808
     if port: c['inbounds']=[{'listen':'127.0.0.1','port':port,'protocol':'socks','settings':{'auth':'noauth','udp':True}}]
     return c
 
@@ -31,11 +33,11 @@ def exact(s,n):
         b+=a
     return b
 
-def telegram(port):
+def telegram(port, dc):
     # MTProto unencrypted req_pq_multi; validate response nonce, not just TCP.
     with socket.create_connection(('127.0.0.1',port),timeout=8) as s:
         s.settimeout(8);s.sendall(b'\x05\x01\x00');assert exact(s,2)==b'\x05\x00'
-        s.sendall(b'\x05\x01\x00\x01'+socket.inet_aton('149.154.167.51')+struct.pack('!H',443))
+        s.sendall(b'\x05\x01\x00\x01'+socket.inet_aton(dc)+struct.pack('!H',443))
         h=exact(s,4);assert h[1]==0
         exact(s,4 if h[3]==1 else (16 if h[3]==4 else exact(s,1)[0]));exact(s,2)
         nonce=os.urandom(16);body=bytes.fromhex('f18e7ebe')+nonce
@@ -58,8 +60,11 @@ def probe(item,binary):
             for label,url in [('telegram_web','https://telegram.org/'),('instagram_web','https://www.instagram.com/')]:
                 r=subprocess.run(['curl','--silent','--socks5-hostname',f'127.0.0.1:{port}','--connect-timeout','5','--max-time','10','--max-filesize','2097152','-o',os.devnull,'-w','%{http_code}',url],capture_output=True,text=True)
                 result[label]={'http':r.stdout,'ok':r.returncode==0 and r.stdout in ('200','301','302')}
-            try:result['telegram_mtproto']=telegram(port)
-            except Exception:result['telegram_mtproto']=False
+            result['telegram_dcs']={}
+            for dc in ['149.154.175.50','149.154.167.51','149.154.175.100','149.154.167.91','91.108.56.130']:
+                try:result['telegram_dcs'][dc]=telegram(port,dc)
+                except Exception:result['telegram_dcs'][dc]=False
+            result['telegram_mtproto']=all(result['telegram_dcs'].values())
         finally:
             proc.terminate()
             try:proc.wait(timeout=3)
@@ -93,7 +98,7 @@ def main():
             if result['telegram_mtproto'] and result['instagram_web']['ok']:
                 name='TEST | '+result['sources'][0]+' | '+result['id'];c=config(out);c['remarks']=name;passed.append(c)
             print(result['id'],result['telegram_mtproto'],result['instagram_web'],flush=True)
-    report={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'vantage':('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local Mac; not the user phone'),'scope':'Telegram MTProto req_pq_multi (one DC), Instagram HTTPS. No authenticated media or calls test.','sources':stats,'tested':len(results),'passed':len(passed),'results':results}
+    report={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'vantage':('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local Mac; not the user phone'),'scope':'Telegram MTProto req_pq_multi (five DC endpoints), Instagram HTTPS. No authenticated media or calls test.','sources':stats,'tested':len(results),'passed':len(passed),'results':results}
     (ROOT/'experimental/report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     if not passed:raise SystemExit('No passing nodes; previous subscriptions preserved')
     (ROOT/'subscription_test_happ.txt').write_text(json.dumps(passed,ensure_ascii=False,indent=2)+'\n')

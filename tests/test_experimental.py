@@ -10,3 +10,6 @@ class ExperimentalTests(unittest.TestCase):
             with self.assertRaises(ValueError):m.parse(self.uri+suffix)
     def test_all_traffic_uses_proxy(self):
         c=m.config(m.parse(self.uri));self.assertEqual(c['routing']['rules'],[{'type':'field','network':'tcp,udp','outboundTag':'proxy'}])
+
+    def test_export_has_local_socks_listener(self):
+        c=m.config(m.parse(self.uri));self.assertEqual(c["inbounds"][0]["protocol"],"socks");self.assertEqual(c["inbounds"][0]["listen"],"127.0.0.1");self.assertEqual(c["inbounds"][0]["port"],10808)
