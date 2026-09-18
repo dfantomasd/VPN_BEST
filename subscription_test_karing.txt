@@ -1,8 +1,9 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 12.6 Mbps | kort0881 | a88fb65c1dc5", "udp": true, "type": "vless", "server": "130.107.73.148", "port": 41373, "uuid": "a71c8954-66a8-4321-bedb-2336230d81ce", "network": "tcp", "tls": true, "servername": "google.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU", "short-id": "0e"}}
-  - {"name": "TEST | 12.1 Mbps | kort0881 | c1c0ba8b896b", "udp": true, "type": "vless", "server": "67.220.73.204", "port": 18662, "uuid": "814bd064-544d-4255-a070-5705c03f6da9", "network": "tcp", "tls": true, "servername": "www.apple.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0", "short-id": "48050fab"}}
+  - {"name": "TEST | 61.4 Mbps | kort0881 | c1c0ba8b896b", "udp": true, "type": "vless", "server": "67.220.73.204", "port": 18662, "uuid": "814bd064-544d-4255-a070-5705c03f6da9", "network": "tcp", "tls": true, "servername": "www.apple.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0", "short-id": "48050fab"}}
+  - {"name": "TEST | 25.5 Mbps | kort0881 | a88fb65c1dc5", "udp": true, "type": "vless", "server": "130.107.73.148", "port": 41373, "uuid": "a71c8954-66a8-4321-bedb-2336230d81ce", "network": "tcp", "tls": true, "servername": "google.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU", "short-id": "0e"}}
+  - {"name": "TEST | 6.8 Mbps | igareck-mobile | 00cada7a558d", "udp": true, "type": "vless", "server": "50.7.120.162", "port": 443, "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277", "network": "tcp", "tls": true, "servername": "nl-dedic-mori.failspace.top", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision"}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 12.6 Mbps | kort0881 | a88fb65c1dc5", "TEST | 12.1 Mbps | kort0881 | c1c0ba8b896b"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 61.4 Mbps | kort0881 | c1c0ba8b896b", "TEST | 25.5 Mbps | kort0881 | a88fb65c1dc5", "TEST | 6.8 Mbps | igareck-mobile | 00cada7a558d"]}
 rules:
   - "MATCH,TEST"
