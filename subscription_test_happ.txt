@@ -10,6 +10,75 @@
         "settings": {
           "vnext": [
             {
+              "address": "169.40.42.223",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "chrome",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 33.7 Mbps | kort0881 | 6e14f4127449"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
               "address": "130.107.73.148",
               "port": 41373,
               "users": [
@@ -66,7 +135,7 @@
         }
       }
     ],
-    "remarks": "TEST | 25.9 Mbps | kort0881 | a88fb65c1dc5"
+    "remarks": "TEST | 31.2 Mbps | kort0881 | a88fb65c1dc5"
   },
   {
     "log": {
@@ -135,7 +204,73 @@
         }
       }
     ],
-    "remarks": "TEST | 19.8 Mbps | kort0881 | c1c0ba8b896b"
+    "remarks": "TEST | 9.4 Mbps | kort0881 | c1c0ba8b896b"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "50.7.227.252",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "uk-dedic.failspace.top",
+            "fingerprint": "qq"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 8.0 Mbps | igareck-mobile | 3571959d07f7"
   },
   {
     "log": {
@@ -204,7 +339,7 @@
         }
       }
     ],
-    "remarks": "TEST | 8.4 Mbps | igareck-mobile | da1ed4eaff8c"
+    "remarks": "TEST | 7.9 Mbps | igareck-mobile | da1ed4eaff8c"
   },
   {
     "log": {
@@ -217,11 +352,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "5.78.159.97",
+              "address": "14ang88.snusoed.baby",
               "port": 443,
               "users": [
                 {
-                  "id": "b88a54a0-501c-4acf-930b-305354452f4e",
+                  "id": "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -233,10 +368,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.yahoo.com",
-            "fingerprint": "firefox",
-            "publicKey": "XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE",
-            "shortId": "884dffd8e62a5c48",
+            "serverName": "14ang88.snusoed.baby",
+            "fingerprint": "random",
+            "publicKey": "s0ypPx0AL3k2KOk74tbm-aE-i7eIR_MYVzfLHZeLaUk",
+            "shortId": "2e124af254a65e7c",
             "spiderX": "/"
           }
         }
@@ -273,7 +408,7 @@
         }
       }
     ],
-    "remarks": "TEST | 7.2 Mbps | igareck-mobile | 9f0b5d341a80"
+    "remarks": "TEST | 7.2 Mbps | igareck-mobile | 8504dd1b036f"
   },
   {
     "log": {
@@ -286,11 +421,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "5.78.159.97",
+              "address": "14ang88.snusoed.baby",
               "port": 443,
               "users": [
                 {
-                  "id": "b88a54a0-501c-4acf-930b-305354452f4e",
+                  "id": "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -302,10 +437,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.yahoo.com",
+            "serverName": "14ang88.snusoed.baby",
             "fingerprint": "chrome",
-            "publicKey": "XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE",
-            "shortId": "884dffd8e62a5c48",
+            "publicKey": "s0ypPx0AL3k2KOk74tbm-aE-i7eIR_MYVzfLHZeLaUk",
+            "shortId": "2e124af254a65e7c",
             "spiderX": "/"
           }
         }
@@ -342,7 +477,7 @@
         }
       }
     ],
-    "remarks": "TEST | 7.1 Mbps | igareck-mobile | 8908787295a5"
+    "remarks": "TEST | 6.8 Mbps | igareck-mobile | 5e4abf2286a6"
   },
   {
     "log": {
@@ -355,7 +490,7 @@
         "settings": {
           "vnext": [
             {
-              "address": "103.139.51.31",
+              "address": "103.139.51.21",
               "port": 443,
               "users": [
                 {
@@ -371,355 +506,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "api.figmafound.org",
-            "fingerprint": "firefox",
-            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
-            "shortId": "711ad7f475c35e5e",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 6.5 Mbps | igareck-mobile | 73f5692b4ac8"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "api.figmafound.org",
-              "port": 443,
-              "users": [
-                {
-                  "id": "71b91642-93ed-4923-8cab-877e19bfc2d6",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "api.figmafound.org",
-            "fingerprint": "random",
-            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
-            "shortId": "711ad7f475c35e5e",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 6.4 Mbps | igareck-mobile | 1536bc77da60"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "mail.figmafound.org",
-              "port": 443,
-              "users": [
-                {
-                  "id": "71b91642-93ed-4923-8cab-877e19bfc2d6",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "mail.figmafound.org",
-            "fingerprint": "random",
-            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
-            "shortId": "711ad7f475c35e5e",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 6.4 Mbps | igareck-mobile | f80d01e01b67"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "103.139.51.41",
-              "port": 443,
-              "users": [
-                {
-                  "id": "71b91642-93ed-4923-8cab-877e19bfc2d6",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "mail.figmafound.org",
-            "fingerprint": "firefox",
-            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
-            "shortId": "711ad7f475c35e5e",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 6.2 Mbps | igareck-mobile | 4f5960c45fe0"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "cloud.figmafound.org",
-              "port": 443,
-              "users": [
-                {
-                  "id": "71b91642-93ed-4923-8cab-877e19bfc2d6",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "cloud.figmafound.org",
-            "fingerprint": "random",
-            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
-            "shortId": "711ad7f475c35e5e",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 6.2 Mbps | igareck-mobile | 5d3e0bfd7f45"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "107.189.26.239",
-              "port": 443,
-              "users": [
-                {
-                  "id": "820a850b-6e10-45e6-8142-2df17a394504",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "cdn.dodostatic.net",
+            "serverName": "auth.figmafound.org",
             "fingerprint": "chrome",
-            "publicKey": "F3XkvPrGmCOrJpNhpPqkVHrZ58YA0Z8VCp6y7s6We2U",
-            "shortId": "c09a8eae8476d36c",
+            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
+            "shortId": "711ad7f475c35e5e",
             "spiderX": "/"
           }
         }
@@ -756,7 +546,145 @@
         }
       }
     ],
-    "remarks": "TEST | 5.8 Mbps | kort0881 | 667e7c3f1c75"
+    "remarks": "TEST | 5.9 Mbps | igareck-mobile | b2c1f71a902c"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "vera.kyras.pw",
+              "port": 443,
+              "users": [
+                {
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "vera.kyras.pw",
+            "fingerprint": "random",
+            "publicKey": "xa2oqWBhi_uW7Zns1Irp8OlAEGQFU_vKTUqUqbnG2Wg",
+            "shortId": "cdf67af2",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.8 Mbps | igareck-main | 1c9f01b70a0f"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "vera.kyras.pw",
+              "port": 443,
+              "users": [
+                {
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "vera.kyras.pw",
+            "fingerprint": "edge",
+            "publicKey": "xa2oqWBhi_uW7Zns1Irp8OlAEGQFU_vKTUqUqbnG2Wg",
+            "shortId": "cdf67af2",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.7 Mbps | igareck-main | fe67a76eec37"
   },
   {
     "log": {
@@ -825,7 +753,145 @@
         }
       }
     ],
-    "remarks": "TEST | 5.4 Mbps | igareck-mobile | 8b4813b23744"
+    "remarks": "TEST | 5.7 Mbps | igareck-mobile | 8b4813b23744"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "svvedko.nxxzxaw.beer",
+              "port": 443,
+              "users": [
+                {
+                  "id": "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "svvedko.nxxzxaw.beer",
+            "fingerprint": "random",
+            "publicKey": "x6p656szvu_3CKLsJ4NtkooRvdTVGx7IoPca_p58_jA",
+            "shortId": "fb442438e2223836",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.6 Mbps | igareck-mobile | 3289cb00c85a"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "103.139.51.21",
+              "port": 443,
+              "users": [
+                {
+                  "id": "71b91642-93ed-4923-8cab-877e19bfc2d6",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "auth.figmafound.org",
+            "fingerprint": "edge",
+            "publicKey": "H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24",
+            "shortId": "711ad7f475c35e5e",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.6 Mbps | igareck-mobile | d7edaf874bcb"
   },
   {
     "log": {
@@ -894,6 +960,6 @@
         }
       }
     ],
-    "remarks": "TEST | 5.1 Mbps | igareck-mobile | 3a51430f11dc"
+    "remarks": "TEST | 5.5 Mbps | igareck-mobile | 3a51430f11dc"
   }
 ]
