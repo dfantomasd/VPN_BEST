@@ -1,7 +1,10 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 10.4 Mbps | kort0881 | a88fb65c1dc5", "udp": true, "type": "vless", "server": "130.107.73.148", "port": 41373, "uuid": "a71c8954-66a8-4321-bedb-2336230d81ce", "network": "tcp", "tls": true, "servername": "google.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU", "short-id": "0e"}}
+  - {"name": "TEST | 28.4 Mbps | kort0881 | a88fb65c1dc5", "udp": true, "type": "vless", "server": "130.107.73.148", "port": 41373, "uuid": "a71c8954-66a8-4321-bedb-2336230d81ce", "network": "tcp", "tls": true, "servername": "google.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU", "short-id": "0e"}}
+  - {"name": "TEST | 9.0 Mbps | kort0881 | 69b7aadfb1db", "udp": true, "type": "vless", "server": "172.235.43.210", "port": 53957, "uuid": "7ab29f89-6eef-4171-b232-fc4f580ad31b", "network": "tcp", "tls": true, "servername": "www.nvidia.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ", "short-id": "44e82fd7b97b14"}}
+  - {"name": "TEST | 6.5 Mbps | igareck-main | aa80124e4c31", "udp": true, "type": "vless", "server": "31.77.161.15", "port": 443, "uuid": "adc11f30-e4cb-4985-bf5e-f9ded69c019f", "network": "tcp", "tls": true, "servername": "nvidia.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI", "short-id": "db04ce8bdb8900f1"}}
+  - {"name": "TEST | 5.9 Mbps | igareck-main | 1c7dd816c197", "udp": true, "type": "vless", "server": "31.77.161.15", "port": 443, "uuid": "adc11f30-e4cb-4985-bf5e-f9ded69c019f", "network": "tcp", "tls": true, "servername": "nvidia.com", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI", "short-id": "db04ce8bdb8900f1"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 10.4 Mbps | kort0881 | a88fb65c1dc5"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 28.4 Mbps | kort0881 | a88fb65c1dc5", "TEST | 9.0 Mbps | kort0881 | 69b7aadfb1db", "TEST | 6.5 Mbps | igareck-main | aa80124e4c31", "TEST | 5.9 Mbps | igareck-main | 1c7dd816c197"]}
 rules:
   - "MATCH,TEST"
