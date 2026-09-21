@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "169.40.42.223",
-              "port": 443,
+              "address": "172.235.43.210",
+              "port": 53957,
               "users": [
                 {
-                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "yahoo.com",
+            "serverName": "www.nvidia.com",
             "fingerprint": "chrome",
-            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
-            "shortId": "c39cc7310a",
+            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
+            "shortId": "44e82fd7b97b14",
             "spiderX": "/"
           }
         }
@@ -66,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 9.0 Mbps | kort0881 | 6e14f4127449"
+    "remarks": "TEST | 17.6 Mbps | kort0881 | 69b7aadfb1db"
   },
   {
     "log": {
@@ -135,7 +135,7 @@
         }
       }
     ],
-    "remarks": "TEST | 8.3 Mbps | kort0881 | a88fb65c1dc5"
+    "remarks": "TEST | 14.1 Mbps | kort0881 | a88fb65c1dc5"
   },
   {
     "log": {
@@ -148,11 +148,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "172.235.43.210",
-              "port": 53957,
+              "address": "5.78.28.48",
+              "port": 443,
               "users": [
                 {
-                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
+                  "id": "b88a54a0-501c-4acf-930b-305354452f4e",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -164,10 +164,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.nvidia.com",
-            "fingerprint": "chrome",
-            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
-            "shortId": "44e82fd7b97b14",
+            "serverName": "www.yahoo.com",
+            "fingerprint": "safari",
+            "publicKey": "XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE",
+            "shortId": "884dffd8e62a5c48",
             "spiderX": "/"
           }
         }
@@ -204,7 +204,7 @@
         }
       }
     ],
-    "remarks": "TEST | 6.4 Mbps | kort0881 | 69b7aadfb1db"
+    "remarks": "TEST | 12.3 Mbps | igareck-main | 08ea721de272"
   },
   {
     "log": {
@@ -217,11 +217,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "107.161.160.23",
+              "address": "5.78.28.48",
               "port": 443,
               "users": [
                 {
-                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "id": "b88a54a0-501c-4acf-930b-305354452f4e",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -231,10 +231,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kama2.api3-max.ru",
-            "fingerprint": "firefox"
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.yahoo.com",
+            "fingerprint": "edge",
+            "publicKey": "XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE",
+            "shortId": "884dffd8e62a5c48",
+            "spiderX": "/"
           }
         }
       },
@@ -270,6 +273,282 @@
         }
       }
     ],
-    "remarks": "TEST | 5.0 Mbps | igareck-main | 448872d38164"
+    "remarks": "TEST | 12.3 Mbps | igareck-mobile | 1d66d4d83186"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "5.78.28.48",
+              "port": 443,
+              "users": [
+                {
+                  "id": "b88a54a0-501c-4acf-930b-305354452f4e",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.yahoo.com",
+            "fingerprint": "chrome",
+            "publicKey": "XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE",
+            "shortId": "884dffd8e62a5c48",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 12.2 Mbps | igareck-main | 57935339397e"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "103.79.76.253",
+              "port": 50149,
+              "users": [
+                {
+                  "id": "547cf8fd-2dd0-4ae5-aa8f-3683d389be26",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "safari",
+            "publicKey": "pBjuELJY0Pupr5YzfLeFL-zKpwmQTy2Z6_S5Jvr9YDE",
+            "shortId": "82946f2f33",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 9.3 Mbps | igareck-main | 903be20fb077"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "103.79.76.253",
+              "port": 50149,
+              "users": [
+                {
+                  "id": "547cf8fd-2dd0-4ae5-aa8f-3683d389be26",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "firefox",
+            "publicKey": "pBjuELJY0Pupr5YzfLeFL-zKpwmQTy2Z6_S5Jvr9YDE",
+            "shortId": "82946f2f33",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.7 Mbps | igareck-main | 51026715f01b"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "103.79.76.253",
+              "port": 50149,
+              "users": [
+                {
+                  "id": "547cf8fd-2dd0-4ae5-aa8f-3683d389be26",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "qq",
+            "publicKey": "pBjuELJY0Pupr5YzfLeFL-zKpwmQTy2Z6_S5Jvr9YDE",
+            "shortId": "82946f2f33",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.3 Mbps | igareck-main | 238a21c99247"
   }
 ]
