@@ -10,75 +10,6 @@
         "settings": {
           "vnext": [
             {
-              "address": "172.235.43.210",
-              "port": 53957,
-              "users": [
-                {
-                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.nvidia.com",
-            "fingerprint": "chrome",
-            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
-            "shortId": "44e82fd7b97b14",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 53.3 Mbps | kort0881 | 69b7aadfb1db"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
               "address": "130.107.73.148",
               "port": 41373,
               "users": [
@@ -135,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 10.1 Mbps | kort0881 | a88fb65c1dc5"
+    "remarks": "TEST | 19.6 Mbps | kort0881 | a88fb65c1dc5"
   },
   {
     "log": {
@@ -204,6 +135,75 @@
         }
       }
     ],
-    "remarks": "TEST | 7.5 Mbps | kort0881 | c1c0ba8b896b"
+    "remarks": "TEST | 18.2 Mbps | kort0881 | c1c0ba8b896b"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "172.235.43.210",
+              "port": 53957,
+              "users": [
+                {
+                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.nvidia.com",
+            "fingerprint": "chrome",
+            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
+            "shortId": "44e82fd7b97b14",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 14.7 Mbps | kort0881 | 69b7aadfb1db"
   }
 ]
