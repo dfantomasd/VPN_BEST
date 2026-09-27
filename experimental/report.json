@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-27T05:49:19.607737+00:00",
+  "checked_at": "2026-09-27T12:32:31.501618+00:00",
   "vantage": "GitHub Actions",
   "selection": "two passes; all five Telegram handshakes <=1500ms; complete 1MiB download >=5Mbps; Instagram HTTPS success",
   "scope": "Telegram MTProto req_pq_multi (five DC endpoints), Instagram HTTPS. No authenticated media or calls test.",
@@ -8,25 +8,25 @@
       "source": "igareck-main",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
       "accepted": 25,
-      "unsupported": 50
+      "unsupported": 26
     },
     {
       "source": "igareck-mobile",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
-      "accepted": 13,
-      "unsupported": 124
+      "accepted": 25,
+      "unsupported": 60
     },
     {
       "source": "igareck-whitelist",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
-      "accepted": 3,
-      "unsupported": 55
+      "accepted": 4,
+      "unsupported": 53
     },
     {
       "source": "kort0881",
       "url": "https://raw.githubusercontent.com/kort0881/vpn-aggregator/main/out/by_type/vless.txt",
       "accepted": 8,
-      "unsupported": 29307
+      "unsupported": 29283
     },
     {
       "source": "V2RayAggregator",
@@ -35,13 +35,14 @@
       "unsupported": 0
     }
   ],
-  "tested": 75,
-  "passed": 15,
+  "tested": 88,
+  "passed": 24,
   "results": [
     {
-      "id": "8966c5599967",
+      "id": "a8e394ab2624",
       "sources": [
-        "igareck-main"
+        "igareck-main",
+        "igareck-mobile"
       ],
       "telegram_web": {
         "http": "200",
@@ -57,603 +58,74 @@
       "telegram_ms": {},
       "telegram_mtproto": false,
       "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "0bdfdb993757",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "c45639608b60",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": false
-      },
-      "telegram_ms": {
-        "149.154.175.50": 635,
-        "149.154.167.51": 1010,
-        "149.154.175.100": 1246,
-        "149.154.167.91": 443
-      },
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "c63ec91460da",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "a22be70d8b5c",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 486,
-        "149.154.167.51": 252,
-        "149.154.175.100": 484,
-        "149.154.167.91": 253,
-        "91.108.56.130": 562
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 8.75,
-      "fast": true,
-      "repeat": {
-        "id": "a22be70d8b5c",
-        "sources": [
-          "igareck-main"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 490,
-          "149.154.167.51": 249,
-          "149.154.175.100": 490,
-          "149.154.167.91": 248,
-          "91.108.56.130": 571
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 8.88,
-        "fast": true
-      }
-    },
-    {
-      "id": "4f76b79ed35e",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 474,
-        "149.154.167.51": 252,
-        "149.154.175.100": 504,
-        "149.154.167.91": 251,
-        "91.108.56.130": 565
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 8.23,
-      "fast": true,
-      "repeat": {
-        "id": "4f76b79ed35e",
-        "sources": [
-          "igareck-main"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 493,
-          "149.154.167.51": 257,
-          "149.154.175.100": 471,
-          "149.154.167.91": 250,
-          "91.108.56.130": 561
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 8.61,
-        "fast": true
-      }
-    },
-    {
-      "id": "e211fae2184b",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 2060,
-        "149.154.167.51": 829,
-        "149.154.175.100": 1090,
-        "149.154.167.91": 677,
-        "91.108.56.130": 898
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0.0,
-      "fast": false
-    },
-    {
-      "id": "bb98f467b45c",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 2744,
-        "149.154.167.51": 1137,
-        "149.154.175.100": 1073,
-        "149.154.167.91": 587,
-        "91.108.56.130": 1075
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 1.63,
-      "fast": false
-    },
-    {
-      "id": "8fcb72d214b8",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 805,
-        "149.154.167.51": 1012,
-        "149.154.175.100": 1539,
-        "149.154.167.91": 1408,
-        "91.108.56.130": 851
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 2.95,
-      "fast": false
-    },
-    {
-      "id": "267c37ad9ce1",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 1011,
-        "149.154.167.51": 784,
-        "149.154.175.100": 2152,
-        "149.154.167.91": 1005,
-        "91.108.56.130": 1378
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0.42,
-      "fast": false
-    },
-    {
-      "id": "63870882a07a",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "bcd0ebe516fc",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "77d71d16c46f",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "be5b43126a6c",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "76971814a371",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "bad7c410e74f",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "563c99f26bce",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "628b71d7ad76",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 1752,
-        "149.154.167.51": 1605,
-        "149.154.175.100": 1753,
-        "149.154.167.91": 2548,
-        "91.108.56.130": 1322
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "531f09418762",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 1767,
-        "149.154.167.51": 1575,
-        "149.154.175.100": 1743,
-        "149.154.167.91": 1940,
-        "91.108.56.130": 1336
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0.29,
-      "fast": false
-    },
-    {
-      "id": "dd60b008c9ae",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 1763,
-        "149.154.167.51": 1545,
-        "149.154.175.100": 1750,
-        "149.154.167.91": 2562,
-        "91.108.56.130": 1296
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0.29,
-      "fast": false
-    },
-    {
-      "id": "185eeb019b2c",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 1776,
-        "149.154.167.51": 1593,
-        "149.154.175.100": 1742,
-        "149.154.167.91": 1548,
-        "91.108.56.130": 1284
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 0.43,
       "fast": false
     },
     {
       "id": "6d92f6bc3ba7",
       "sources": [
-        "igareck-main"
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": false
+      },
+      "telegram_ms": {
+        "149.154.175.50": 1890,
+        "149.154.167.51": 2070,
+        "149.154.175.100": 1198
+      },
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "32310833c19e",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 646,
+        "149.154.167.51": 1460,
+        "149.154.175.100": 1634,
+        "149.154.167.91": 1437,
+        "91.108.56.130": 1731
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.94,
+      "fast": false
+    },
+    {
+      "id": "e2b7625f0b3d",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
       ],
       "telegram_web": {
         "http": "200",
@@ -671,38 +143,17 @@
         "91.108.56.130": false
       },
       "telegram_ms": {
-        "149.154.175.50": 1030,
-        "149.154.167.51": 1021,
-        "149.154.175.100": 2766,
-        "149.154.167.91": 2355
+        "149.154.175.50": 705,
+        "149.154.167.51": 384,
+        "149.154.175.100": 613,
+        "149.154.167.91": 375
       },
       "telegram_mtproto": false,
       "speed_mbps": 0,
       "fast": false
     },
     {
-      "id": "0efea14fcb5f",
-      "sources": [
-        "igareck-main"
-      ],
-      "telegram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "instagram_web": {
-        "http": "000",
-        "ok": false
-      },
-      "telegram_dcs": {
-        "149.154.175.50": false
-      },
-      "telegram_ms": {},
-      "telegram_mtproto": false,
-      "speed_mbps": 0,
-      "fast": false
-    },
-    {
-      "id": "a140680045b3",
+      "id": "dd4cde935ae7",
       "sources": [
         "igareck-main",
         "igareck-mobile"
@@ -723,17 +174,17 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 555,
-        "149.154.167.51": 342,
-        "149.154.175.100": 558,
-        "149.154.167.91": 360,
-        "91.108.56.130": 640
+        "149.154.175.50": 693,
+        "149.154.167.51": 465,
+        "149.154.175.100": 683,
+        "149.154.167.91": 470,
+        "91.108.56.130": 743
       },
       "telegram_mtproto": true,
-      "speed_mbps": 7.08,
+      "speed_mbps": 5.34,
       "fast": true,
       "repeat": {
-        "id": "a140680045b3",
+        "id": "dd4cde935ae7",
         "sources": [
           "igareck-main",
           "igareck-mobile"
@@ -754,19 +205,19 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 544,
-          "149.154.167.51": 351,
-          "149.154.175.100": 545,
-          "149.154.167.91": 358,
-          "91.108.56.130": 639
+          "149.154.175.50": 643,
+          "149.154.167.51": 459,
+          "149.154.175.100": 657,
+          "149.154.167.91": 469,
+          "91.108.56.130": 736
         },
         "telegram_mtproto": true,
-        "speed_mbps": 7.16,
+        "speed_mbps": 5.58,
         "fast": true
       }
     },
     {
-      "id": "3111d576ee82",
+      "id": "8046f74c16e7",
       "sources": [
         "igareck-main",
         "igareck-mobile"
@@ -787,17 +238,17 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 563,
-        "149.154.167.51": 351,
-        "149.154.175.100": 550,
-        "149.154.167.91": 341,
-        "91.108.56.130": 641
+        "149.154.175.50": 717,
+        "149.154.167.51": 475,
+        "149.154.175.100": 654,
+        "149.154.167.91": 460,
+        "91.108.56.130": 736
       },
       "telegram_mtproto": true,
-      "speed_mbps": 6.59,
+      "speed_mbps": 5.25,
       "fast": true,
       "repeat": {
-        "id": "3111d576ee82",
+        "id": "8046f74c16e7",
         "sources": [
           "igareck-main",
           "igareck-mobile"
@@ -818,20 +269,21 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 546,
-          "149.154.167.51": 349,
-          "149.154.175.100": 558,
-          "149.154.167.91": 358,
-          "91.108.56.130": 637
+          "149.154.175.50": 648,
+          "149.154.167.51": 450,
+          "149.154.175.100": 701,
+          "149.154.167.91": 450,
+          "91.108.56.130": 744
         },
         "telegram_mtproto": true,
-        "speed_mbps": 7.12,
+        "speed_mbps": 5.25,
         "fast": true
       }
     },
     {
-      "id": "a950eb8879d4",
+      "id": "586e77fd065e",
       "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
@@ -850,18 +302,19 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 571,
-        "149.154.167.51": 348,
-        "149.154.175.100": 547,
-        "149.154.167.91": 343,
-        "91.108.56.130": 655
+        "149.154.175.50": 685,
+        "149.154.167.51": 486,
+        "149.154.175.100": 673,
+        "149.154.167.91": 454,
+        "91.108.56.130": 750
       },
       "telegram_mtproto": true,
-      "speed_mbps": 7.06,
+      "speed_mbps": 5.29,
       "fast": true,
       "repeat": {
-        "id": "a950eb8879d4",
+        "id": "586e77fd065e",
         "sources": [
+          "igareck-main",
           "igareck-mobile"
         ],
         "telegram_web": {
@@ -880,20 +333,21 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 550,
-          "149.154.167.51": 351,
-          "149.154.175.100": 562,
-          "149.154.167.91": 343,
-          "91.108.56.130": 663
+          "149.154.175.50": 811,
+          "149.154.167.51": 452,
+          "149.154.175.100": 669,
+          "149.154.167.91": 454,
+          "91.108.56.130": 738
         },
         "telegram_mtproto": true,
-        "speed_mbps": 7.06,
+        "speed_mbps": 5.32,
         "fast": true
       }
     },
     {
-      "id": "cae799af09ae",
+      "id": "2c11de30b992",
       "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
@@ -912,18 +366,19 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 579,
-        "149.154.167.51": 354,
-        "149.154.175.100": 555,
-        "149.154.167.91": 434,
-        "91.108.56.130": 730
+        "149.154.175.50": 670,
+        "149.154.167.51": 493,
+        "149.154.175.100": 772,
+        "149.154.167.91": 492,
+        "91.108.56.130": 748
       },
       "telegram_mtproto": true,
-      "speed_mbps": 6.64,
+      "speed_mbps": 5.05,
       "fast": true,
       "repeat": {
-        "id": "cae799af09ae",
+        "id": "2c11de30b992",
         "sources": [
+          "igareck-main",
           "igareck-mobile"
         ],
         "telegram_web": {
@@ -942,206 +397,21 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 629,
-          "149.154.167.51": 347,
-          "149.154.175.100": 659,
-          "149.154.167.91": 356,
-          "91.108.56.130": 658
+          "149.154.175.50": 712,
+          "149.154.167.51": 468,
+          "149.154.175.100": 686,
+          "149.154.167.91": 469,
+          "91.108.56.130": 752
         },
         "telegram_mtproto": true,
-        "speed_mbps": 6.64,
+        "speed_mbps": 5.42,
         "fast": true
       }
     },
     {
-      "id": "d4afe856f515",
+      "id": "82e55486b3b3",
       "sources": [
-        "igareck-mobile"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 553,
-        "149.154.167.51": 341,
-        "149.154.175.100": 589,
-        "149.154.167.91": 339,
-        "91.108.56.130": 639
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 7.09,
-      "fast": true,
-      "repeat": {
-        "id": "d4afe856f515",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 555,
-          "149.154.167.51": 339,
-          "149.154.175.100": 554,
-          "149.154.167.91": 341,
-          "91.108.56.130": 659
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 7.09,
-        "fast": true
-      }
-    },
-    {
-      "id": "fc4150dc41a5",
-      "sources": [
-        "igareck-mobile"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 553,
-        "149.154.167.51": 338,
-        "149.154.175.100": 606,
-        "149.154.167.91": 340,
-        "91.108.56.130": 646
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 6.65,
-      "fast": true,
-      "repeat": {
-        "id": "fc4150dc41a5",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 551,
-          "149.154.167.51": 340,
-          "149.154.175.100": 570,
-          "149.154.167.91": 342,
-          "91.108.56.130": 639
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 6.89,
-        "fast": true
-      }
-    },
-    {
-      "id": "e1283b552834",
-      "sources": [
-        "igareck-mobile"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 584,
-        "149.154.167.51": 368,
-        "149.154.175.100": 576,
-        "149.154.167.91": 361,
-        "91.108.56.130": 672
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 6.64,
-      "fast": true,
-      "repeat": {
-        "id": "e1283b552834",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 703,
-          "149.154.167.51": 358,
-          "149.154.175.100": 573,
-          "149.154.167.91": 359,
-          "91.108.56.130": 660
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 6.86,
-        "fast": true
-      }
-    },
-    {
-      "id": "6553718c59d1",
-      "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
@@ -1161,194 +431,163 @@
       "fast": false
     },
     {
-      "id": "70ef2d2bc45a",
+      "id": "f42be3f8c476",
       "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "ed3163ce86f0",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "e1f0232b9169",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
         "http": "200",
         "ok": true
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 489,
-        "149.154.167.51": 248,
-        "149.154.175.100": 449,
-        "149.154.167.91": 248,
-        "91.108.56.130": 557
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 8.62,
-      "fast": true,
-      "repeat": {
-        "id": "70ef2d2bc45a",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 455,
-          "149.154.167.51": 250,
-          "149.154.175.100": 519,
-          "149.154.167.91": 250,
-          "91.108.56.130": 560
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 8.62,
-        "fast": true
-      }
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
     },
     {
-      "id": "3790aa0c5519",
+      "id": "0cd5e5e89788",
       "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 455,
-        "149.154.167.51": 250,
-        "149.154.175.100": 488,
-        "149.154.167.91": 247,
-        "91.108.56.130": 557
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 7.85,
-      "fast": true,
-      "repeat": {
-        "id": "3790aa0c5519",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 494,
-          "149.154.167.51": 252,
-          "149.154.175.100": 455,
-          "149.154.167.91": 250,
-          "91.108.56.130": 563
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 7.85,
-        "fast": true
-      }
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
     },
     {
-      "id": "32310833c19e",
+      "id": "8966c5599967",
       "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 574,
-        "149.154.167.51": 424,
-        "149.154.175.100": 476,
-        "149.154.167.91": 267,
-        "91.108.56.130": 560
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 8.46,
-      "fast": true,
-      "repeat": {
-        "id": "32310833c19e",
-        "sources": [
-          "igareck-mobile"
-        ],
-        "telegram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "instagram_web": {
-          "http": "200",
-          "ok": true
-        },
-        "telegram_dcs": {
-          "149.154.175.50": true,
-          "149.154.167.51": true,
-          "149.154.175.100": true,
-          "149.154.167.91": true,
-          "91.108.56.130": true
-        },
-        "telegram_ms": {
-          "149.154.175.50": 505,
-          "149.154.167.51": 271,
-          "149.154.175.100": 467,
-          "149.154.167.91": 252,
-          "91.108.56.130": 578
-        },
-        "telegram_mtproto": true,
-        "speed_mbps": 8.78,
-        "fast": true
-      }
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
     },
     {
-      "id": "69ef8625eb56",
+      "id": "83dff6085216",
       "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "0be0119fa0e8",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "3b723437f2f2",
+      "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
@@ -1370,6 +609,51 @@
     {
       "id": "a3e6dd81670b",
       "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "ddd20cd05ce5",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "302",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "3bc3b2180778",
+      "sources": [
+        "igareck-main",
         "igareck-mobile"
       ],
       "telegram_web": {
@@ -1377,8 +661,8 @@
         "ok": true
       },
       "instagram_web": {
-        "http": "000",
-        "ok": false
+        "http": "200",
+        "ok": true
       },
       "telegram_dcs": {
         "149.154.175.50": true,
@@ -1388,27 +672,398 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 629,
-        "149.154.167.51": 414,
-        "149.154.175.100": 613,
-        "149.154.167.91": 382,
-        "91.108.56.130": 732
+        "149.154.175.50": 662,
+        "149.154.167.51": 437,
+        "149.154.175.100": 689,
+        "149.154.167.91": 443,
+        "91.108.56.130": 738
       },
       "telegram_mtproto": true,
-      "speed_mbps": 0,
-      "fast": false
+      "speed_mbps": 5.19,
+      "fast": true,
+      "repeat": {
+        "id": "3bc3b2180778",
+        "sources": [
+          "igareck-main",
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 659,
+          "149.154.167.51": 428,
+          "149.154.175.100": 685,
+          "149.154.167.91": 442,
+          "91.108.56.130": 742
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.19,
+        "fast": true
+      }
     },
     {
-      "id": "94b99bf724a5",
+      "id": "486c6d635c2c",
+      "sources": [
+        "igareck-main"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 673,
+        "149.154.167.51": 449,
+        "149.154.175.100": 643,
+        "149.154.167.91": 437,
+        "91.108.56.130": 736
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.03,
+      "fast": true,
+      "repeat": {
+        "id": "486c6d635c2c",
+        "sources": [
+          "igareck-main"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 673,
+          "149.154.167.51": 446,
+          "149.154.175.100": 653,
+          "149.154.167.91": 439,
+          "91.108.56.130": 745
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.03,
+        "fast": true
+      }
+    },
+    {
+      "id": "ea6c67ba7024",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 690,
+        "149.154.167.51": 427,
+        "149.154.175.100": 695,
+        "149.154.167.91": 448,
+        "91.108.56.130": 742
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.26,
+      "fast": true,
+      "repeat": {
+        "id": "ea6c67ba7024",
+        "sources": [
+          "igareck-main",
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 654,
+          "149.154.167.51": 446,
+          "149.154.175.100": 690,
+          "149.154.167.91": 440,
+          "91.108.56.130": 748
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.28,
+        "fast": true
+      }
+    },
+    {
+      "id": "d4afe856f515",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 652,
+        "149.154.167.51": 446,
+        "149.154.175.100": 675,
+        "149.154.167.91": 450,
+        "91.108.56.130": 725
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.34,
+      "fast": true,
+      "repeat": {
+        "id": "d4afe856f515",
+        "sources": [
+          "igareck-main",
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 692,
+          "149.154.167.51": 441,
+          "149.154.175.100": 660,
+          "149.154.167.91": 441,
+          "91.108.56.130": 742
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.41,
+        "fast": true
+      }
+    },
+    {
+      "id": "52982f65647f",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 691,
+        "149.154.167.51": 574,
+        "149.154.175.100": 697,
+        "149.154.167.91": 475,
+        "91.108.56.130": 769
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.26,
+      "fast": true,
+      "repeat": {
+        "id": "52982f65647f",
+        "sources": [
+          "igareck-main",
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 731,
+          "149.154.167.51": 585,
+          "149.154.175.100": 828,
+          "149.154.167.91": 824,
+          "91.108.56.130": 805
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.27,
+        "fast": true
+      }
+    },
+    {
+      "id": "c80b5065dcf1",
+      "sources": [
+        "igareck-main",
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 706,
+        "149.154.167.51": 450,
+        "149.154.175.100": 703,
+        "149.154.167.91": 438,
+        "91.108.56.130": 882
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.15,
+      "fast": true,
+      "repeat": {
+        "id": "c80b5065dcf1",
+        "sources": [
+          "igareck-main",
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 718,
+          "149.154.167.51": 676,
+          "149.154.175.100": 733,
+          "149.154.167.91": 453,
+          "91.108.56.130": 740
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.47,
+        "fast": true
+      }
+    },
+    {
+      "id": "1c6d39a5881c",
       "sources": [
         "igareck-mobile"
       ],
       "telegram_web": {
-        "http": "000",
-        "ok": false
+        "http": "200",
+        "ok": true
       },
       "instagram_web": {
-        "http": "302",
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "c63ec91460da",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
         "ok": true
       },
       "telegram_dcs": {
@@ -1419,26 +1074,26 @@
         "91.108.56.130": false
       },
       "telegram_ms": {
-        "149.154.175.50": 661,
-        "149.154.167.51": 441,
-        "149.154.175.100": 598,
-        "149.154.167.91": 391
+        "149.154.175.50": 1670,
+        "149.154.167.51": 746,
+        "149.154.175.100": 2755,
+        "149.154.167.91": 1699
       },
       "telegram_mtproto": false,
       "speed_mbps": 0,
       "fast": false
     },
     {
-      "id": "3b723437f2f2",
+      "id": "5ca67984a490",
       "sources": [
         "igareck-mobile"
       ],
       "telegram_web": {
-        "http": "000",
-        "ok": false
+        "http": "200",
+        "ok": true
       },
       "instagram_web": {
-        "http": "302",
+        "http": "200",
         "ok": true
       },
       "telegram_dcs": {
@@ -1447,19 +1102,1112 @@
         "149.154.175.100": true,
         "149.154.167.91": true,
         "91.108.56.130": false
+      },
+      "telegram_ms": {
+        "149.154.175.50": 2548,
+        "149.154.167.51": 1818,
+        "149.154.175.100": 1526,
+        "149.154.167.91": 2129
+      },
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "4aa7231fdf5d",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 618,
+        "149.154.167.51": 482,
+        "149.154.175.100": 1601,
+        "149.154.167.91": 2398,
+        "91.108.56.130": 688
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 6.12,
+      "fast": false
+    },
+    {
+      "id": "405a2b49757f",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
       },
       "telegram_ms": {
         "149.154.175.50": 599,
-        "149.154.167.51": 428,
-        "149.154.175.100": 598,
-        "149.154.167.91": 400
+        "149.154.167.51": 354,
+        "149.154.175.100": 581,
+        "149.154.167.91": 365,
+        "91.108.56.130": 692
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 6.02,
+      "fast": true,
+      "repeat": {
+        "id": "405a2b49757f",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": false
+        },
+        "telegram_ms": {
+          "149.154.175.50": 2667
+        },
+        "telegram_mtproto": false,
+        "speed_mbps": 0,
+        "fast": false
+      }
+    },
+    {
+      "id": "d65384002221",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": false
+      },
+      "telegram_ms": {
+        "149.154.175.50": 613
       },
       "telegram_mtproto": false,
       "speed_mbps": 0,
       "fast": false
     },
     {
-      "id": "b025dc80a56e",
+      "id": "999fb1f4aadf",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 685,
+        "149.154.167.51": 443,
+        "149.154.175.100": 706,
+        "149.154.167.91": 447,
+        "91.108.56.130": 742
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.25,
+      "fast": true,
+      "repeat": {
+        "id": "999fb1f4aadf",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 644,
+          "149.154.167.51": 457,
+          "149.154.175.100": 736,
+          "149.154.167.91": 461,
+          "91.108.56.130": 739
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.54,
+        "fast": true
+      }
+    },
+    {
+      "id": "b52fbc7fd79b",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 655,
+        "149.154.167.51": 457,
+        "149.154.175.100": 655,
+        "149.154.167.91": 446,
+        "91.108.56.130": 725
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.25,
+      "fast": true,
+      "repeat": {
+        "id": "b52fbc7fd79b",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 698,
+          "149.154.167.51": 444,
+          "149.154.175.100": 657,
+          "149.154.167.91": 444,
+          "91.108.56.130": 735
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.25,
+        "fast": true
+      }
+    },
+    {
+      "id": "c910c5b7690b",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 727,
+        "149.154.167.51": 465,
+        "149.154.175.100": 729,
+        "149.154.167.91": 463,
+        "91.108.56.130": 736
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.23,
+      "fast": true,
+      "repeat": {
+        "id": "c910c5b7690b",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 693,
+          "149.154.167.51": 463,
+          "149.154.175.100": 674,
+          "149.154.167.91": 467,
+          "91.108.56.130": 731
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.23,
+        "fast": true
+      }
+    },
+    {
+      "id": "8d568f6754f0",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 643,
+        "149.154.167.51": 482,
+        "149.154.175.100": 753,
+        "149.154.167.91": 470,
+        "91.108.56.130": 731
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.24,
+      "fast": true,
+      "repeat": {
+        "id": "8d568f6754f0",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 750,
+          "149.154.167.51": 476,
+          "149.154.175.100": 718,
+          "149.154.167.91": 490,
+          "91.108.56.130": 768
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.24,
+        "fast": true
+      }
+    },
+    {
+      "id": "fc1c8af1baa7",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 686,
+        "149.154.167.51": 435,
+        "149.154.175.100": 679,
+        "149.154.167.91": 463,
+        "91.108.56.130": 741
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.04,
+      "fast": true,
+      "repeat": {
+        "id": "fc1c8af1baa7",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 698,
+          "149.154.167.51": 499,
+          "149.154.175.100": 715,
+          "149.154.167.91": 475,
+          "91.108.56.130": 729
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.04,
+        "fast": true
+      }
+    },
+    {
+      "id": "cbfe574e4137",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 729,
+        "149.154.167.51": 470,
+        "149.154.175.100": 664,
+        "149.154.167.91": 461,
+        "91.108.56.130": 727
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.54,
+      "fast": true,
+      "repeat": {
+        "id": "cbfe574e4137",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 701,
+          "149.154.167.51": 460,
+          "149.154.175.100": 729,
+          "149.154.167.91": 462,
+          "91.108.56.130": 769
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 4.74,
+        "fast": false
+      }
+    },
+    {
+      "id": "5e2c70f2d1f2",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "4667784a2057",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "11b7266dbd73",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "e5e945710598",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "fb2c3776bc60",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 654,
+        "149.154.167.51": 447,
+        "149.154.175.100": 688,
+        "149.154.167.91": 438,
+        "91.108.56.130": 741
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.24,
+      "fast": true,
+      "repeat": {
+        "id": "fb2c3776bc60",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 690,
+          "149.154.167.51": 427,
+          "149.154.175.100": 685,
+          "149.154.167.91": 441,
+          "91.108.56.130": 738
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.29,
+        "fast": true
+      }
+    },
+    {
+      "id": "69c8ee1984a8",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 660,
+        "149.154.167.51": 446,
+        "149.154.175.100": 685,
+        "149.154.167.91": 439,
+        "91.108.56.130": 736
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.23,
+      "fast": true,
+      "repeat": {
+        "id": "69c8ee1984a8",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 646,
+          "149.154.167.51": 438,
+          "149.154.175.100": 686,
+          "149.154.167.91": 442,
+          "91.108.56.130": 754
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.23,
+        "fast": true
+      }
+    },
+    {
+      "id": "3c91cb24b8d4",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 642,
+        "149.154.167.51": 440,
+        "149.154.175.100": 652,
+        "149.154.167.91": 427,
+        "91.108.56.130": 749
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.25,
+      "fast": true,
+      "repeat": {
+        "id": "3c91cb24b8d4",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 689,
+          "149.154.167.51": 443,
+          "149.154.175.100": 689,
+          "149.154.167.91": 438,
+          "91.108.56.130": 747
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.34,
+        "fast": true
+      }
+    },
+    {
+      "id": "543224427d47",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 641,
+        "149.154.167.51": 440,
+        "149.154.175.100": 697,
+        "149.154.167.91": 445,
+        "91.108.56.130": 738
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.35,
+      "fast": true,
+      "repeat": {
+        "id": "543224427d47",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 655,
+          "149.154.167.51": 440,
+          "149.154.175.100": 654,
+          "149.154.167.91": 441,
+          "91.108.56.130": 750
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.35,
+        "fast": true
+      }
+    },
+    {
+      "id": "2b0b48c10702",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 653,
+        "149.154.167.51": 448,
+        "149.154.175.100": 686,
+        "149.154.167.91": 444,
+        "91.108.56.130": 742
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.18,
+      "fast": true,
+      "repeat": {
+        "id": "2b0b48c10702",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 654,
+          "149.154.167.51": 439,
+          "149.154.175.100": 690,
+          "149.154.167.91": 440,
+          "91.108.56.130": 755
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.18,
+        "fast": true
+      }
+    },
+    {
+      "id": "d85695ef920e",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 685,
+        "149.154.167.51": 452,
+        "149.154.175.100": 683,
+        "149.154.167.91": 451,
+        "91.108.56.130": 783
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.09,
+      "fast": true,
+      "repeat": {
+        "id": "d85695ef920e",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 683,
+          "149.154.167.51": 466,
+          "149.154.175.100": 653,
+          "149.154.167.91": 805,
+          "91.108.56.130": 749
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.09,
+        "fast": true
+      }
+    },
+    {
+      "id": "c5f35c318db3",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 681,
+        "149.154.167.51": 458,
+        "149.154.175.100": 669,
+        "149.154.167.91": 426,
+        "91.108.56.130": 743
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 5.28,
+      "fast": true,
+      "repeat": {
+        "id": "c5f35c318db3",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 681,
+          "149.154.167.51": 475,
+          "149.154.175.100": 660,
+          "149.154.167.91": 448,
+          "91.108.56.130": 1789
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 5.32,
+        "fast": false
+      }
+    },
+    {
+      "id": "84218a32cb0b",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 565,
+        "149.154.167.51": 341,
+        "149.154.175.100": 572,
+        "149.154.167.91": 349,
+        "91.108.56.130": 669
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 2.4,
+      "fast": false
+    },
+    {
+      "id": "a22be70d8b5c",
+      "sources": [
+        "igareck-mobile"
+      ],
+      "telegram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "instagram_web": {
+        "http": "200",
+        "ok": true
+      },
+      "telegram_dcs": {
+        "149.154.175.50": true,
+        "149.154.167.51": true,
+        "149.154.175.100": true,
+        "149.154.167.91": true,
+        "91.108.56.130": true
+      },
+      "telegram_ms": {
+        "149.154.175.50": 594,
+        "149.154.167.51": 352,
+        "149.154.175.100": 549,
+        "149.154.167.91": 369,
+        "91.108.56.130": 652
+      },
+      "telegram_mtproto": true,
+      "speed_mbps": 6.16,
+      "fast": true,
+      "repeat": {
+        "id": "a22be70d8b5c",
+        "sources": [
+          "igareck-mobile"
+        ],
+        "telegram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "instagram_web": {
+          "http": "200",
+          "ok": true
+        },
+        "telegram_dcs": {
+          "149.154.175.50": true,
+          "149.154.167.51": true,
+          "149.154.175.100": true,
+          "149.154.167.91": true,
+          "91.108.56.130": true
+        },
+        "telegram_ms": {
+          "149.154.175.50": 551,
+          "149.154.167.51": 1395,
+          "149.154.175.100": 588,
+          "149.154.167.91": 354,
+          "91.108.56.130": 1671
+        },
+        "telegram_mtproto": true,
+        "speed_mbps": 3.45,
+        "fast": false
+      }
+    },
+    {
+      "id": "4717271091f3",
       "sources": [
         "igareck-whitelist"
       ],
@@ -1480,62 +2228,64 @@
       "fast": false
     },
     {
-      "id": "755ccd4f3dd9",
+      "id": "c5f4f699c394",
       "sources": [
         "igareck-whitelist"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 798,
-        "149.154.167.51": 1005,
-        "149.154.175.100": 797,
-        "149.154.167.91": 596,
-        "91.108.56.130": 2941
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 4.67,
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
       "fast": false
     },
     {
-      "id": "702cfc7f5730",
+      "id": "1a99e2ef17e6",
       "sources": [
         "igareck-whitelist"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": false
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 1770,
-        "149.154.167.51": 592,
-        "149.154.175.100": 784,
-        "149.154.167.91": 929
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "9f2f4d939a54",
+      "sources": [
+        "igareck-whitelist"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
       },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
       "telegram_mtproto": false,
       "speed_mbps": 0,
       "fast": false
@@ -1546,29 +2296,19 @@
         "kort0881"
       ],
       "telegram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
+        "149.154.175.50": false
       },
-      "telegram_ms": {
-        "149.154.175.50": 1035,
-        "149.154.167.51": 871,
-        "149.154.175.100": 1689,
-        "149.154.167.91": 882,
-        "91.108.56.130": 1134
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 3.91,
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
       "fast": false
     },
     {
@@ -1613,14 +2353,14 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 302,
-        "149.154.167.51": 487,
-        "149.154.175.100": 326,
-        "149.154.167.91": 495,
-        "91.108.56.130": 524
+        "149.154.175.50": 283,
+        "149.154.167.51": 433,
+        "149.154.175.100": 272,
+        "149.154.167.91": 424,
+        "91.108.56.130": 478
       },
       "telegram_mtproto": true,
-      "speed_mbps": 11.4,
+      "speed_mbps": 11.48,
       "fast": true,
       "repeat": {
         "id": "69b7aadfb1db",
@@ -1643,14 +2383,14 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 303,
-          "149.154.167.51": 514,
+          "149.154.175.50": 271,
+          "149.154.167.51": 460,
           "149.154.175.100": 307,
-          "149.154.167.91": 511,
-          "91.108.56.130": 525
+          "149.154.167.91": 474,
+          "91.108.56.130": 535
         },
         "telegram_mtproto": true,
-        "speed_mbps": 11.67,
+        "speed_mbps": 11.48,
         "fast": true
       }
     },
@@ -1675,14 +2415,14 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 151,
-        "149.154.167.51": 273,
-        "149.154.175.100": 151,
-        "149.154.167.91": 428,
-        "91.108.56.130": 695
+        "149.154.175.50": 116,
+        "149.154.167.51": 222,
+        "149.154.175.100": 197,
+        "149.154.167.91": 407,
+        "91.108.56.130": 654
       },
       "telegram_mtproto": true,
-      "speed_mbps": 15.74,
+      "speed_mbps": 26.74,
       "fast": true,
       "repeat": {
         "id": "c1c0ba8b896b",
@@ -1705,14 +2445,14 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 257,
-          "149.154.167.51": 301,
-          "149.154.175.100": 147,
-          "149.154.167.91": 266,
-          "91.108.56.130": 535
+          "149.154.175.50": 122,
+          "149.154.167.51": 231,
+          "149.154.175.100": 114,
+          "149.154.167.91": 213,
+          "91.108.56.130": 505
         },
         "telegram_mtproto": true,
-        "speed_mbps": 30.33,
+        "speed_mbps": 26.74,
         "fast": true
       }
     },
@@ -1737,14 +2477,14 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 206,
-        "149.154.167.51": 307,
-        "149.154.175.100": 202,
-        "149.154.167.91": 311,
-        "91.108.56.130": 596
+        "149.154.175.50": 227,
+        "149.154.167.51": 327,
+        "149.154.175.100": 232,
+        "149.154.167.91": 319,
+        "91.108.56.130": 692
       },
       "telegram_mtproto": true,
-      "speed_mbps": 27.84,
+      "speed_mbps": 23.63,
       "fast": true,
       "repeat": {
         "id": "a88fb65c1dc5",
@@ -1767,47 +2507,16 @@
           "91.108.56.130": true
         },
         "telegram_ms": {
-          "149.154.175.50": 208,
-          "149.154.167.51": 309,
-          "149.154.175.100": 202,
-          "149.154.167.91": 302,
-          "91.108.56.130": 567
+          "149.154.175.50": 224,
+          "149.154.167.51": 332,
+          "149.154.175.100": 236,
+          "149.154.167.91": 334,
+          "91.108.56.130": 578
         },
         "telegram_mtproto": true,
-        "speed_mbps": 28.0,
+        "speed_mbps": 24.8,
         "fast": true
       }
-    },
-    {
-      "id": "7eefbdb2d4b3",
-      "sources": [
-        "kort0881"
-      ],
-      "telegram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "instagram_web": {
-        "http": "200",
-        "ok": true
-      },
-      "telegram_dcs": {
-        "149.154.175.50": true,
-        "149.154.167.51": true,
-        "149.154.175.100": true,
-        "149.154.167.91": true,
-        "91.108.56.130": true
-      },
-      "telegram_ms": {
-        "149.154.175.50": 617,
-        "149.154.167.51": 397,
-        "149.154.175.100": 613,
-        "149.154.167.91": 414,
-        "91.108.56.130": 696
-      },
-      "telegram_mtproto": true,
-      "speed_mbps": 4.56,
-      "fast": false
     },
     {
       "id": "7e955e47ecfb",
@@ -1832,6 +2541,27 @@
     },
     {
       "id": "eedac80d6b60",
+      "sources": [
+        "kort0881"
+      ],
+      "telegram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "instagram_web": {
+        "http": "000",
+        "ok": false
+      },
+      "telegram_dcs": {
+        "149.154.175.50": false
+      },
+      "telegram_ms": {},
+      "telegram_mtproto": false,
+      "speed_mbps": 0,
+      "fast": false
+    },
+    {
+      "id": "9646b3225e48",
       "sources": [
         "kort0881"
       ],
@@ -1966,8 +2696,8 @@
         "ok": false
       },
       "instagram_web": {
-        "http": "200",
-        "ok": true
+        "http": "000",
+        "ok": false
       },
       "telegram_dcs": {
         "149.154.175.50": true,
@@ -1977,36 +2707,15 @@
         "91.108.56.130": true
       },
       "telegram_ms": {
-        "149.154.175.50": 489,
-        "149.154.167.51": 297,
-        "149.154.175.100": 494,
-        "149.154.167.91": 298,
-        "91.108.56.130": 584
+        "149.154.175.50": 1011,
+        "149.154.167.51": 381,
+        "149.154.175.100": 629,
+        "149.154.167.91": 376,
+        "91.108.56.130": 736
       },
       "telegram_mtproto": true,
-      "speed_mbps": 5.19,
-      "fast": true,
-      "repeat": {
-        "id": "c0a23cb588a1",
-        "sources": [
-          "primary 🇩🇪⚡Германия"
-        ],
-        "telegram_web": {
-          "http": "000",
-          "ok": false
-        },
-        "instagram_web": {
-          "http": "000",
-          "ok": false
-        },
-        "telegram_dcs": {
-          "149.154.175.50": false
-        },
-        "telegram_ms": {},
-        "telegram_mtproto": false,
-        "speed_mbps": 0,
-        "fast": false
-      }
+      "speed_mbps": 0,
+      "fast": false
     },
     {
       "id": "2ccfe2175086",
