@@ -10,75 +10,6 @@
         "settings": {
           "vnext": [
             {
-              "address": "172.235.43.210",
-              "port": 53957,
-              "users": [
-                {
-                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.nvidia.com",
-            "fingerprint": "chrome",
-            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
-            "shortId": "44e82fd7b97b14",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 51.3 Mbps | kort0881 | 69b7aadfb1db"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
               "address": "130.107.73.148",
               "port": 41373,
               "users": [
@@ -135,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 10.9 Mbps | kort0881 | a88fb65c1dc5"
+    "remarks": "TEST | 14.9 Mbps | kort0881 | a88fb65c1dc5"
   },
   {
     "log": {
@@ -148,11 +79,80 @@
         "settings": {
           "vnext": [
             {
-              "address": "50.7.120.203",
+              "address": "172.235.43.210",
+              "port": 53957,
+              "users": [
+                {
+                  "id": "7ab29f89-6eef-4171-b232-fc4f580ad31b",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.nvidia.com",
+            "fingerprint": "chrome",
+            "publicKey": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ",
+            "shortId": "44e82fd7b97b14",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 11.4 Mbps | kort0881 | 69b7aadfb1db"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "davai6.api3-max.ru",
               "port": 443,
               "users": [
                 {
-                  "id": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -164,7 +164,73 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "nl-dedic-mori-4.failspace.top",
+            "serverName": "davai6.api3-max.ru",
+            "fingerprint": "qq"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 8.5 Mbps | igareck-mobile | 879ee0319869"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "45.141.118.57",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "davai6.api3-max.ru",
             "fingerprint": "firefox"
           }
         }
@@ -201,7 +267,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.1 Mbps | igareck-main | 3790aa0c5519"
+    "remarks": "TEST | 8.3 Mbps | igareck-main | 0feead17bcb4"
   },
   {
     "log": {
@@ -214,11 +280,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "50.7.120.203",
+              "address": "45.141.118.57",
               "port": 443,
               "users": [
                 {
-                  "id": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -230,8 +296,8 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "nl-dedic-mori-4.failspace.top",
-            "fingerprint": "edge"
+            "serverName": "davai6.api3-max.ru",
+            "fingerprint": "qq"
           }
         }
       },
@@ -267,7 +333,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.0 Mbps | igareck-main | d9bdf34f7ed3"
+    "remarks": "TEST | 8.0 Mbps | igareck-mobile | 55499430219b"
   },
   {
     "log": {
@@ -280,7 +346,147 @@
         "settings": {
           "vnext": [
             {
-              "address": "nl-dedic-mori-4.failspace.top",
+              "address": "davai6.api3-max.ru",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "davai6.api3-max.ru",
+            "fingerprint": "qq",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 7.2 Mbps | igareck-mobile | 863fabfc1cdb"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "davai6.api3-max.ru",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "davai6.api3-max.ru",
+            "fingerprint": "firefox",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 7.1 Mbps | igareck-main | 036f90ee7682"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "50.7.249.198",
               "port": 443,
               "users": [
                 {
@@ -296,7 +502,7 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "nl-dedic-mori-4.failspace.top",
+            "serverName": "polka.failspace.top",
             "fingerprint": "firefox"
           }
         }
@@ -333,6 +539,138 @@
         }
       }
     ],
-    "remarks": "TEST | 5.0 Mbps | igareck-main | 163fbea2b48f"
+    "remarks": "TEST | 6.9 Mbps | igareck-main | 2a59b354439e"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "50.7.249.198",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "polka.failspace.top",
+            "fingerprint": "qq"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.7 Mbps | igareck-mobile | 54775522abac"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "davai6.api3-max.ru",
+              "port": 443,
+              "users": [
+                {
+                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "davai6.api3-max.ru",
+            "fingerprint": "firefox"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.3 Mbps | igareck-main | 8ed2168a9146"
   }
 ]
