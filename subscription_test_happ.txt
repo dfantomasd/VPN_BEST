@@ -66,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 18.3 Mbps | kort0881 | 69b7aadfb1db"
+    "remarks": "TEST | 18.2 Mbps | kort0881 | 69b7aadfb1db"
   },
   {
     "log": {
@@ -135,7 +135,7 @@
         }
       }
     ],
-    "remarks": "TEST | 15.1 Mbps | kort0881 | a88fb65c1dc5"
+    "remarks": "TEST | 14.8 Mbps | kort0881 | a88fb65c1dc5"
   },
   {
     "log": {
@@ -148,11 +148,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "kostaa7.api3-max.ru",
-              "port": 443,
+              "address": "nlll.gazladder.work",
+              "port": 8443,
               "users": [
                 {
-                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -162,13 +162,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kostaa7.api3-max.ru",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nlll.gazladder.work",
             "fingerprint": "chrome",
-            "alpn": [
-              "h3"
-            ]
+            "publicKey": "j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng",
+            "shortId": "b415b8d7a6106ace",
+            "spiderX": "/"
           }
         }
       },
@@ -204,7 +204,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.9 Mbps | igareck-main | 74055530d285"
+    "remarks": "TEST | 6.0 Mbps | igareck-main | f1d8f6fed1b8"
   },
   {
     "log": {
@@ -217,11 +217,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "kostaa7.api3-max.ru",
-              "port": 443,
+              "address": "nlll.gazladder.work",
+              "port": 8443,
               "users": [
                 {
-                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -231,13 +231,220 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kostaa7.api3-max.ru",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nlll.gazladder.work",
+            "fingerprint": "safari",
+            "publicKey": "j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng",
+            "shortId": "b415b8d7a6106ace",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.9 Mbps | igareck-mobile | e31a4b64951c"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "nlll.gazladder.work",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nlll.gazladder.work",
+            "fingerprint": "qq",
+            "publicKey": "j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng",
+            "shortId": "b415b8d7a6106ace",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.9 Mbps | igareck-main | f0f868f60d26"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "nlll.gazladder.work",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nlll.gazladder.work",
+            "fingerprint": "ios",
+            "publicKey": "j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng",
+            "shortId": "b415b8d7a6106ace",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.7 Mbps | igareck-mobile | 9e99fde921b4"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "nlll.gazladder.work",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nlll.gazladder.work",
             "fingerprint": "firefox",
-            "alpn": [
-              "h3"
-            ]
+            "publicKey": "j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng",
+            "shortId": "b415b8d7a6106ace",
+            "spiderX": "/"
           }
         }
       },
@@ -273,7 +480,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.7 Mbps | igareck-main | c32337ec90eb"
+    "remarks": "TEST | 5.6 Mbps | igareck-main | 65a5b21ce60b"
   },
   {
     "log": {
@@ -286,11 +493,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "kostaa7.api3-max.ru",
+              "address": "pl.gazladder.work",
               "port": 443,
               "users": [
                 {
-                  "id": "cdd6bfce-781a-4454-b7d5-4778abb5c24f",
+                  "id": "e9844617-e393-4876-afa7-11859695f4ee",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -300,13 +507,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kostaa7.api3-max.ru",
-            "fingerprint": "qq",
-            "alpn": [
-              "h3"
-            ]
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "pl.gazladder.work",
+            "fingerprint": "ios",
+            "publicKey": "SoMfQzFhE5QfKWMZA7ZNkYP63P5hiyWEbE9fsPIP4Go",
+            "shortId": "",
+            "spiderX": "/"
           }
         }
       },
@@ -342,7 +549,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.6 Mbps | igareck-mobile | 2ca4535d81ea"
+    "remarks": "TEST | 5.1 Mbps | igareck-main | 6960d714bb82"
   },
   {
     "log": {
@@ -355,11 +562,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "31.77.227.10",
-              "port": 52006,
+              "address": "51.89.13.62",
+              "port": 443,
               "users": [
                 {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
+                  "id": "2412bd96-925b-43f2-81d1-0ed4f0793699",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -369,10 +576,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "fr.setlisting.ru",
-            "fingerprint": "firefox"
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "repo1.maven.org",
+            "fingerprint": "firefox",
+            "publicKey": "5oAHRDQjrl8xOCvH3fPLCosMO6STI_hifhcmfIUU6UM",
+            "shortId": "8339f2680588f5ee",
+            "spiderX": "/"
           }
         }
       },
@@ -408,484 +618,6 @@
         }
       }
     ],
-    "remarks": "TEST | 5.4 Mbps | igareck-mobile | d0db98fe445d"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "31.77.227.10",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "fr.setlisting.ru",
-            "fingerprint": "qq"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.3 Mbps | igareck-mobile | bc851133cb61"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "31.77.227.10",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "fr.setlisting.ru",
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.3 Mbps | igareck-mobile | a23ee2ddb1f6"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "31.77.227.10",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "fr.setlisting.ru",
-            "fingerprint": "qq",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.2 Mbps | igareck-mobile | 5d4688444aae"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "144.31.150.4",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kimi.fastaichat.ru",
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.2 Mbps | igareck-mobile | b95cad4ed62e"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "144.31.150.4",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kimi.fastaichat.ru",
-            "fingerprint": "qq",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.2 Mbps | igareck-mobile | 25317b3e4287"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "144.31.150.4",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kimi.fastaichat.ru",
-            "fingerprint": "firefox"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.1 Mbps | igareck-mobile | d88f1c972039"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "144.31.150.4",
-              "port": 52006,
-              "users": [
-                {
-                  "id": "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "kimi.fastaichat.ru",
-            "fingerprint": "qq"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.0 Mbps | igareck-mobile | 0ca620f25d06"
+    "remarks": "TEST | 5.0 Mbps | igareck-main | c502a36e69f3"
   }
 ]
