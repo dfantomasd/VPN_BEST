@@ -1,7 +1,9 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 15.1 Mbps | kort0881 | 69b7aadfb1db", "udp": true, "type": "vless", "server": "172.235.43.210", "port": 53957, "uuid": "7ab29f89-6eef-4171-b232-fc4f580ad31b", "network": "tcp", "tls": true, "servername": "www.nvidia.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ", "short-id": "44e82fd7b97b14"}}
+  - {"name": "TEST | 15.7 Mbps | kort0881 | 69b7aadfb1db", "udp": true, "type": "vless", "server": "172.235.43.210", "port": 53957, "uuid": "7ab29f89-6eef-4171-b232-fc4f580ad31b", "network": "tcp", "tls": true, "servername": "www.nvidia.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ", "short-id": "44e82fd7b97b14"}}
+  - {"name": "TEST | 6.3 Mbps | igareck-main | f644534a91e9", "udp": true, "type": "vless", "server": "chubby0.failspace.top", "port": 443, "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277", "network": "tcp", "tls": true, "servername": "chubby0.failspace.top", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision"}
+  - {"name": "TEST | 6.2 Mbps | igareck-mobile | 6c0ab8663d50", "udp": true, "type": "vless", "server": "chubby0.failspace.top", "port": 443, "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277", "network": "tcp", "tls": true, "servername": "chubby0.failspace.top", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision"}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 15.1 Mbps | kort0881 | 69b7aadfb1db"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 15.7 Mbps | kort0881 | 69b7aadfb1db", "TEST | 6.3 Mbps | igareck-main | f644534a91e9", "TEST | 6.2 Mbps | igareck-mobile | 6c0ab8663d50"]}
 rules:
   - "MATCH,TEST"
