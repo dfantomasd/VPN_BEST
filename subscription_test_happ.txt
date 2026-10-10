@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "fi-s-1.pythonmakemigreat.wiki",
+              "address": "c20s5.portablesubmarines.com",
               "port": 443,
               "users": [
                 {
-                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "id": "85fe968d-fbb5-40dc-8422-30635eccb149",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "fi-s-1.pythonmakemigreat.wiki",
+            "serverName": "portal.citygrainla.com",
             "fingerprint": "chrome",
-            "publicKey": "ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg",
-            "shortId": "78f97d82e16aaad6",
+            "publicKey": "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE",
+            "shortId": "051f20c2344a2dfd",
             "spiderX": "/"
           }
         }
@@ -66,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.7 Mbps | igareck-mobile | 22913c005f4e"
+    "remarks": "TEST | 5.2 Mbps | igareck-main | a986db2ccd40"
   },
   {
     "log": {
@@ -79,11 +79,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "31.56.186.115",
+              "address": "c20s5.portablesubmarines.com",
               "port": 443,
               "users": [
                 {
-                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "id": "85fe968d-fbb5-40dc-8422-30635eccb149",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -95,10 +95,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "fi-s-1.pythonmakemigreat.wiki",
-            "fingerprint": "firefox",
-            "publicKey": "ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg",
-            "shortId": "78f97d82e16aaad6",
+            "serverName": "portal.citygrainla.com",
+            "fingerprint": "random",
+            "publicKey": "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE",
+            "shortId": "051f20c2344a2dfd",
             "spiderX": "/"
           }
         }
@@ -135,6 +135,75 @@
         }
       }
     ],
-    "remarks": "TEST | 5.6 Mbps | igareck-mobile | 04036ca727a9"
+    "remarks": "TEST | 5.2 Mbps | igareck-main | d3a5680ac365"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "46.250.250.149",
+              "port": 2053,
+              "users": [
+                {
+                  "id": "b4caaf57-ad77-4948-a6f5-51b3513799bf",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.apple.com",
+            "fingerprint": "random",
+            "publicKey": "hieuCHb3HYdDYHmTDyWw2SGqyfo36AVuA-wSiZMdU1M",
+            "shortId": "9922313fffed1c63",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.0 Mbps | igareck-main | 56d74ef58d8d"
   }
 ]
