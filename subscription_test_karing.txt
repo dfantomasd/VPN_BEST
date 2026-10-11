@@ -1,8 +1,9 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 6.8 Mbps | igareck-main | 25349179c471", "udp": true, "type": "vless", "server": "142.91.108.25", "port": 443, "uuid": "ee18d188-14cc-417e-beb1-70e4add6d023", "network": "tcp", "tls": true, "servername": "jp3.nztvpn.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM", "short-id": "ea36c03d86f91287"}}
-  - {"name": "TEST | 5.4 Mbps | igareck-main | 60576aa4258c", "udp": true, "type": "vless", "server": "142.91.108.25", "port": 443, "uuid": "ee18d188-14cc-417e-beb1-70e4add6d023", "network": "tcp", "tls": true, "servername": "jp3.nztvpn.com", "client-fingerprint": "qq", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM", "short-id": "ea36c03d86f91287"}}
+  - {"name": "TEST | 5.4 Mbps | igareck-main | f47f26d0c613", "udp": true, "type": "vless", "server": "finl11.ali-bard.online", "port": 443, "uuid": "e5339f4e-2214-47a0-b2a9-8811e3f60bcf", "network": "tcp", "tls": true, "servername": "finl11.ali-bard.online", "client-fingerprint": "random", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I", "short-id": ""}}
+  - {"name": "TEST | 5.4 Mbps | igareck-mobile | a986db2ccd40", "udp": true, "type": "vless", "server": "c20s5.portablesubmarines.com", "port": 443, "uuid": "85fe968d-fbb5-40dc-8422-30635eccb149", "network": "tcp", "tls": true, "servername": "portal.citygrainla.com", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE", "short-id": "051f20c2344a2dfd"}}
+  - {"name": "TEST | 5.1 Mbps | igareck-mobile | 0bc234003295", "udp": true, "type": "vless", "server": "185.114.48.103", "port": 443, "uuid": "616c7b3b-41f4-4038-88c6-d6fedd0ae4a7", "network": "tcp", "tls": true, "servername": "nd-3.ardesnode.ru", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "PKlt_5ASsz137EvA9SKSadtjEv1k_U7VRtoelKCgADs", "short-id": "9ea74b83f4993ca9"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 6.8 Mbps | igareck-main | 25349179c471", "TEST | 5.4 Mbps | igareck-main | 60576aa4258c"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.4 Mbps | igareck-main | f47f26d0c613", "TEST | 5.4 Mbps | igareck-mobile | a986db2ccd40", "TEST | 5.1 Mbps | igareck-mobile | 0bc234003295"]}
 rules:
   - "MATCH,TEST"
