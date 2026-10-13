@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "178.107.58.80",
-              "port": 8443,
+              "address": "ge-s-1.pythonmakemigreat.wiki",
+              "port": 443,
               "users": [
                 {
-                  "id": "d0b32482-67aa-426d-8735-ab6c7ceb65bd",
+                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -24,13 +24,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "cdn.intercom-home.online",
-            "fingerprint": "firefox",
-            "alpn": [
-              "h2"
-            ]
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ge-s-1.pythonmakemigreat.wiki",
+            "fingerprint": "safari",
+            "publicKey": "5fkwwCKZzMsE6Eb_b3iqluu-1AWIfnYl-p0N3EL9Al8",
+            "shortId": "2c9a2790ad5900b2",
+            "spiderX": "/"
           }
         }
       },
@@ -66,7 +66,76 @@
         }
       }
     ],
-    "remarks": "TEST | 8.4 Mbps | igareck-mobile | 7956fb061b00"
+    "remarks": "TEST | 7.9 Mbps | igareck-main | 708b85a0c684"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "azxcc.kovsh.lol",
+              "port": 443,
+              "users": [
+                {
+                  "id": "ace33fb8-c593-4b17-8f72-f3359b6e9638",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "azxcc.kovsh.lol",
+            "fingerprint": "safari",
+            "publicKey": "-ADm-o6yFYNcLgLQgHguNWDWrH9xcRwQyqLMoVuajgo",
+            "shortId": "8944e69f4aadde1e",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 7.2 Mbps | igareck-main | fb7da0f97b32"
   },
   {
     "log": {
@@ -135,7 +204,7 @@
         }
       }
     ],
-    "remarks": "TEST | 8.4 Mbps | igareck-main | 9eb1e9733308"
+    "remarks": "TEST | 7.0 Mbps | igareck-main | 9eb1e9733308"
   },
   {
     "log": {
@@ -148,11 +217,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "sw.golangwikito.cfd",
+              "address": "130.78.190.5",
               "port": 443,
               "users": [
                 {
-                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -164,10 +233,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "sw.golangwikito.cfd",
-            "fingerprint": "chrome",
-            "publicKey": "Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg",
-            "shortId": "a1037b25dcef6aa7",
+            "serverName": "play.murka.fun",
+            "fingerprint": "edge",
+            "publicKey": "1iDRaqLgk1t6J54DlCZP0AFfRv8KxUTEa3bpL5nJrD4",
+            "shortId": "1f82ac",
             "spiderX": "/"
           }
         }
@@ -204,7 +273,7 @@
         }
       }
     ],
-    "remarks": "TEST | 8.0 Mbps | igareck-mobile | 6c5b49f20b21"
+    "remarks": "TEST | 6.2 Mbps | igareck-main | dc90dddf57cf"
   },
   {
     "log": {
@@ -217,11 +286,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "pl.golangwikito.cfd",
+              "address": "play.murka.fun",
               "port": 443,
               "users": [
                 {
-                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -233,10 +302,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "pl.golangwikito.cfd",
-            "fingerprint": "chrome",
-            "publicKey": "DsTVLCehsKvfFGtNZU5leKOLTlEp28qeifHYtRKOFwg",
-            "shortId": "f8b695e5c59d028c",
+            "serverName": "play.murka.fun",
+            "fingerprint": "random",
+            "publicKey": "1iDRaqLgk1t6J54DlCZP0AFfRv8KxUTEa3bpL5nJrD4",
+            "shortId": "1f82ac",
             "spiderX": "/"
           }
         }
@@ -273,7 +342,7 @@
         }
       }
     ],
-    "remarks": "TEST | 7.6 Mbps | igareck-main | 31e221e5cf2a"
+    "remarks": "TEST | 6.0 Mbps | igareck-main | 83d837ce21a5"
   },
   {
     "log": {
@@ -286,13 +355,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "64.188.119.73",
+              "address": "lineartronic-iii.subaru-volga.com",
               "port": 443,
               "users": [
                 {
-                  "id": "3d1752a5-2832-4981-878d-f4aca87d6f86",
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "flow": ""
                 }
               ]
             }
@@ -302,10 +371,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "ocd1.global-media-cache.com",
-            "fingerprint": "chrome",
-            "publicKey": "zvLIiZsAqG2Uz9FEBPJ1q2P6lUmG4SBv-M7vlDuqEFo",
-            "shortId": "421880b82d",
+            "serverName": "lineartronic-iii.subaru-volga.com",
+            "fingerprint": "edge",
+            "publicKey": "HGQg7VrNlEhfOEjLR1LNeBZaVJg-J1f4DhxqOp-orjA",
+            "shortId": "6facda",
             "spiderX": "/"
           }
         }
@@ -342,7 +411,7 @@
         }
       }
     ],
-    "remarks": "TEST | 6.4 Mbps | igareck-main | b1088e63adcd"
+    "remarks": "TEST | 5.9 Mbps | igareck-main | e09c609b12d5"
   },
   {
     "log": {
@@ -355,11 +424,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "finaluty.loknietotop.digital",
+              "address": "130.78.190.5",
               "port": 443,
               "users": [
                 {
-                  "id": "ace33fb8-c593-4b17-8f72-f3359b6e9638",
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -371,10 +440,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "finaluty.loknietotop.digital",
-            "fingerprint": "firefox",
-            "publicKey": "III2StgFziJtisbaKDYlEF2qYwBHJZnzZH5DHdwuFQ8",
-            "shortId": "d110331f200987ae",
+            "serverName": "play.murka.fun",
+            "fingerprint": "random",
+            "publicKey": "1iDRaqLgk1t6J54DlCZP0AFfRv8KxUTEa3bpL5nJrD4",
+            "shortId": "1f82ac",
             "spiderX": "/"
           }
         }
@@ -411,7 +480,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.8 Mbps | igareck-main | 441e21b85fda"
+    "remarks": "TEST | 5.8 Mbps | igareck-main | 88e4c9c592a4"
   },
   {
     "log": {
@@ -424,13 +493,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "se3.h1cloud.net",
-              "port": 25643,
+              "address": "lineartronic-iii.subaru-volga.com",
+              "port": 443,
               "users": [
                 {
-                  "id": "83383473-0d62-4089-ac4d-d7ecb413504a",
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "flow": ""
                 }
               ]
             }
@@ -440,10 +509,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "ru1.boutique-hotel1108.ru",
-            "fingerprint": "firefox",
-            "publicKey": "NBKdM5Q5Tiue7YkxEldtShCCHi1GJ0WKCizyhPXQTy4",
-            "shortId": "20672f0333e23e84",
+            "serverName": "lineartronic-iii.subaru-volga.com",
+            "fingerprint": "random",
+            "publicKey": "HGQg7VrNlEhfOEjLR1LNeBZaVJg-J1f4DhxqOp-orjA",
+            "shortId": "6facda",
             "spiderX": "/"
           }
         }
@@ -480,6 +549,75 @@
         }
       }
     ],
-    "remarks": "TEST | 5.8 Mbps | igareck-main | 325f1ad3c4e8"
+    "remarks": "TEST | 5.8 Mbps | igareck-main | 9e54d43c610a"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "play.murka.fun",
+              "port": 443,
+              "users": [
+                {
+                  "id": "6db6b948-655f-4f68-a9e7-865050e05b31",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.murka.fun",
+            "fingerprint": "qq",
+            "publicKey": "1iDRaqLgk1t6J54DlCZP0AFfRv8KxUTEa3bpL5nJrD4",
+            "shortId": "1f82ac",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.4 Mbps | igareck-main | 65d3255fe14a"
   }
 ]
