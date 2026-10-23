@@ -669,11 +669,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "183.109.131.75",
-              "port": 20086,
+              "address": "free.ertebatgoostar.ir",
+              "port": 443,
               "users": [
                 {
-                  "id": "b26c4803-0bca-467c-a245-c9a80bdd72ec",
+                  "id": "c9eab439-53bf-46e4-ba58-fc368ae1ee8c",
                   "alterId": 0,
                   "security": "auto"
                 }
@@ -682,14 +682,15 @@
           ]
         },
         "streamSettings": {
-          "network": "ws",
+          "network": "raw",
           "sockopt": {
             "tcpKeepAliveIdle": 300,
             "tcpKeepAliveInterval": 60
           },
-          "wsSettings": {
-            "path": "/",
-            "headers": {}
+          "rawSettings": {
+            "header": {
+              "type": "none"
+            }
           }
         }
       },
@@ -767,7 +768,7 @@
         }
       ]
     },
-    "remarks": "02 ◻️ VMESS · WS | кандидат"
+    "remarks": "02 ◻️ VMESS · RAW | кандидат"
   },
   {
     "log": {
@@ -1975,7 +1976,7 @@
             "tcpKeepAliveInterval": 60
           },
           "wsSettings": {
-            "path": "/?ed=2048@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN",
+            "path": "/",
             "headers": {}
           }
         }
@@ -2404,7 +2405,7 @@
             "tcpKeepAliveInterval": 60
           },
           "wsSettings": {
-            "path": "/",
+            "path": "/?ed=2048@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN",
             "headers": {}
           }
         }
@@ -2810,32 +2811,28 @@
     "outbounds": [
       {
         "tag": "proxy",
-        "protocol": "vmess",
+        "protocol": "hysteria",
         "settings": {
-          "vnext": [
-            {
-              "address": "165.154.195.38",
-              "port": 35034,
-              "users": [
-                {
-                  "id": "959a8caf-4cea-43d0-a548-3628e7ddfafc",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
+          "version": 2,
+          "address": "525b1a38-tly2o0-tn5bnx-19xg1.nw4.hyhuawei.com",
+          "port": 443
         },
         "streamSettings": {
-          "network": "raw",
+          "network": "hysteria",
+          "security": "tls",
+          "hysteriaSettings": {
+            "version": 2,
+            "auth": "e1dee7c0-cff7-11eb-a8bf-f23c91cfbbc9"
+          },
+          "tlsSettings": {
+            "serverName": "525b1a38-tly2o0-tn5bnx-19xg1.nw4.hyhuawei.com",
+            "alpn": [
+              "h3"
+            ]
+          },
           "sockopt": {
             "tcpKeepAliveIdle": 300,
             "tcpKeepAliveInterval": 60
-          },
-          "rawSettings": {
-            "header": {
-              "type": "none"
-            }
           }
         }
       },
@@ -2913,437 +2910,7 @@
         }
       ]
     },
-    "remarks": "07 ◻️ VMESS · RAW | кандидат"
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "hosts": {
-        "localhost": "127.0.0.1",
-        "dns.google": [
-          "8.8.8.8",
-          "8.8.4.4"
-        ],
-        "dns.quad9.net": [
-          "9.9.9.9",
-          "149.112.112.112"
-        ],
-        "dns.adguard-dns.com": [
-          "94.140.14.14",
-          "94.140.15.15"
-        ],
-        "freedns.controld.com": [
-          "76.76.2.0",
-          "76.76.10.0"
-        ],
-        "dns.mullvad.net": [
-          "194.242.2.2"
-        ],
-        "cloudflare-dns.com": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ],
-        "doh.opendns.com": [
-          "208.67.222.222",
-          "208.67.220.220"
-        ],
-        "doh.libredns.gr": [
-          "116.202.176.26"
-        ],
-        "doh.dns4all.eu": [
-          "194.0.5.3"
-        ],
-        "wikimedia-dns.org": [
-          "185.71.138.138"
-        ],
-        "dns.hostux.net": [
-          "46.226.108.173",
-          "46.226.109.82"
-        ],
-        "blank.dnsforge.de": [
-          "138.199.149.249",
-          "78.47.71.194"
-        ]
-      },
-      "servers": [
-        {
-          "address": "tcp+local://8.8.8.8:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://8.8.4.4:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://9.9.9.9:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://94.140.14.14:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://76.76.2.0:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://76.76.10.0:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://1.0.0.1:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://1.1.1.1:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://208.67.220.220:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://208.67.222.222:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        "https://dns.google/dns-query",
-        "https://dns.quad9.net/dns-query",
-        "https://dns.adguard-dns.com/dns-query",
-        "https://freedns.controld.com/p0",
-        "https://dns.mullvad.net/dns-query",
-        "https://cloudflare-dns.com/dns-query",
-        "https://doh.opendns.com/dns-query",
-        "https://doh.libredns.gr/dns-query",
-        "https://doh.dns4all.eu/dns-query",
-        "https://wikimedia-dns.org/dns-query",
-        "https://dns.hostux.net/dns-query",
-        "https://blank.dnsforge.de/dns-query"
-      ],
-      "queryStrategy": "UseIPv4",
-      "disableCache": false,
-      "serveStale": true,
-      "useSystemHosts": true,
-      "enableParallelQuery": true,
-      "tag": "dns-remote",
-      "disableFallbackIfMatch": true
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "metadataOnly": false
-        }
-      },
-      {
-        "tag": "http-in",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {},
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "metadataOnly": false
-        }
-      },
-      {
-        "tag": "dns-in",
-        "listen": "127.0.0.1",
-        "port": 10853,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "1.1.1.1",
-          "port": 53,
-          "network": "tcp,udp"
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "free.ertebatgoostar.ir",
-              "port": 443,
-              "users": [
-                {
-                  "id": "c9eab439-53bf-46e4-ba58-fc368ae1ee8c",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "raw",
-          "sockopt": {
-            "tcpKeepAliveIdle": 300,
-            "tcpKeepAliveInterval": 60
-          },
-          "rawSettings": {
-            "header": {
-              "type": "none"
-            }
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIPv4"
-        }
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {
-          "response": {
-            "type": "http"
-          }
-        }
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns",
-        "settings": {
-          "network": "tcp,udp"
-        }
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "domainMatcher": "hybrid",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-remote"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-in"
-          ],
-          "outboundTag": "dns-out"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "full:localhost",
-            "domain:local",
-            "domain:lan",
-            "regexp:^[^.]+$"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "ip": [
-            "127.0.0.0/8",
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "100.64.0.0/10",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "remarks": "08 ◻️ VMESS · RAW | кандидат"
+    "remarks": "07 ◻️ HYSTERIA · HYSTERIA | кандидат"
   },
   {
     "log": {
@@ -3697,6 +3264,437 @@
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
             "fingerprint": "android"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "08 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "141.193.213.172",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.calmlunch.com",
+            "fingerprint": "chrome"
           }
         }
       },
@@ -4127,7 +4125,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
-            "fingerprint": "chrome"
+            "fingerprint": "edge"
           }
         }
       },
@@ -4558,7 +4556,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
-            "fingerprint": "edge"
+            "fingerprint": "firefox"
           }
         }
       },
@@ -4989,7 +4987,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
-            "fingerprint": "firefox"
+            "fingerprint": "ios"
           }
         }
       },
@@ -5420,7 +5418,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
-            "fingerprint": "ios"
+            "fingerprint": "qq"
           }
         }
       },
@@ -5851,437 +5849,6 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.calmlunch.com",
-            "fingerprint": "qq"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIPv4"
-        }
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {
-          "response": {
-            "type": "http"
-          }
-        }
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns",
-        "settings": {
-          "network": "tcp,udp"
-        }
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "domainMatcher": "hybrid",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-remote"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-in"
-          ],
-          "outboundTag": "dns-out"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "full:localhost",
-            "domain:local",
-            "domain:lan",
-            "regexp:^[^.]+$"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "ip": [
-            "127.0.0.0/8",
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "100.64.0.0/10",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "remarks": "14 ◻️ TROJAN · WS | кандидат"
-  },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "hosts": {
-        "localhost": "127.0.0.1",
-        "dns.google": [
-          "8.8.8.8",
-          "8.8.4.4"
-        ],
-        "dns.quad9.net": [
-          "9.9.9.9",
-          "149.112.112.112"
-        ],
-        "dns.adguard-dns.com": [
-          "94.140.14.14",
-          "94.140.15.15"
-        ],
-        "freedns.controld.com": [
-          "76.76.2.0",
-          "76.76.10.0"
-        ],
-        "dns.mullvad.net": [
-          "194.242.2.2"
-        ],
-        "cloudflare-dns.com": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ],
-        "doh.opendns.com": [
-          "208.67.222.222",
-          "208.67.220.220"
-        ],
-        "doh.libredns.gr": [
-          "116.202.176.26"
-        ],
-        "doh.dns4all.eu": [
-          "194.0.5.3"
-        ],
-        "wikimedia-dns.org": [
-          "185.71.138.138"
-        ],
-        "dns.hostux.net": [
-          "46.226.108.173",
-          "46.226.109.82"
-        ],
-        "blank.dnsforge.de": [
-          "138.199.149.249",
-          "78.47.71.194"
-        ]
-      },
-      "servers": [
-        {
-          "address": "tcp+local://8.8.8.8:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://8.8.4.4:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://9.9.9.9:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://94.140.14.14:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://76.76.2.0:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://76.76.10.0:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://1.0.0.1:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://1.1.1.1:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://208.67.220.220:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        {
-          "address": "tcp+local://208.67.222.222:53",
-          "domains": [
-            "full:dns.google",
-            "full:dns.quad9.net",
-            "full:dns.adguard-dns.com",
-            "full:freedns.controld.com",
-            "full:dns.mullvad.net",
-            "full:cloudflare-dns.com",
-            "full:doh.opendns.com",
-            "full:doh.libredns.gr",
-            "full:doh.dns4all.eu",
-            "full:wikimedia-dns.org",
-            "full:dns.hostux.net",
-            "full:blank.dnsforge.de"
-          ],
-          "skipFallback": true,
-          "queryStrategy": "UseIPv4",
-          "timeoutMs": 4000
-        },
-        "https://dns.google/dns-query",
-        "https://dns.quad9.net/dns-query",
-        "https://dns.adguard-dns.com/dns-query",
-        "https://freedns.controld.com/p0",
-        "https://dns.mullvad.net/dns-query",
-        "https://cloudflare-dns.com/dns-query",
-        "https://doh.opendns.com/dns-query",
-        "https://doh.libredns.gr/dns-query",
-        "https://doh.dns4all.eu/dns-query",
-        "https://wikimedia-dns.org/dns-query",
-        "https://dns.hostux.net/dns-query",
-        "https://blank.dnsforge.de/dns-query"
-      ],
-      "queryStrategy": "UseIPv4",
-      "disableCache": false,
-      "serveStale": true,
-      "useSystemHosts": true,
-      "enableParallelQuery": true,
-      "tag": "dns-remote",
-      "disableFallbackIfMatch": true
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "metadataOnly": false
-        }
-      },
-      {
-        "tag": "http-in",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {},
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "metadataOnly": false
-        }
-      },
-      {
-        "tag": "dns-in",
-        "listen": "127.0.0.1",
-        "port": 10853,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "1.1.1.1",
-          "port": 53,
-          "network": "tcp,udp"
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "141.193.213.172",
-              "port": 443,
-              "password": "humanity"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "sockopt": {
-            "tcpKeepAliveIdle": 300,
-            "tcpKeepAliveInterval": 60,
-            "dialerProxy": "fragment"
-          },
-          "wsSettings": {
-            "path": "/assignment",
-            "headers": {
-              "Host": "www.calmlunch.com"
-            }
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "www.calmlunch.com",
             "fingerprint": "safari"
           }
         }
@@ -6360,7 +5927,7 @@
         }
       ]
     },
-    "remarks": "15 ◻️ TROJAN · WS | кандидат"
+    "remarks": "14 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -6789,7 +6356,7 @@
         }
       ]
     },
-    "remarks": "16 ◻️ TROJAN · WS | кандидат"
+    "remarks": "15 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -7218,7 +6785,7 @@
         }
       ]
     },
-    "remarks": "17 ◻️ TROJAN · WS | кандидат"
+    "remarks": "16 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -7647,7 +7214,7 @@
         }
       ]
     },
-    "remarks": "18 ◻️ TROJAN · WS | кандидат"
+    "remarks": "17 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -8076,7 +7643,7 @@
         }
       ]
     },
-    "remarks": "19 ◻️ TROJAN · WS | кандидат"
+    "remarks": "18 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -8505,7 +8072,7 @@
         }
       ]
     },
-    "remarks": "20 ◻️ TROJAN · WS | кандидат"
+    "remarks": "19 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -8934,7 +8501,7 @@
         }
       ]
     },
-    "remarks": "21 ◻️ TROJAN · WS | кандидат"
+    "remarks": "20 ◻️ TROJAN · WS | кандидат"
   },
   {
     "log": {
@@ -9363,6 +8930,440 @@
         }
       ]
     },
+    "remarks": "21 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "45.131.4.38",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "android",
+            "alpn": [
+              "http/1.1"
+            ]
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
     "remarks": "22 ◻️ TROJAN · WS | кандидат"
   },
   {
@@ -9694,7 +9695,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -9716,7 +9717,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "android",
+            "fingerprint": "chrome",
             "alpn": [
               "http/1.1"
             ]
@@ -10128,7 +10129,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -10150,7 +10151,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "chrome",
+            "fingerprint": "edge",
             "alpn": [
               "http/1.1"
             ]
@@ -10562,7 +10563,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -10584,7 +10585,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "edge",
+            "fingerprint": "ios",
             "alpn": [
               "http/1.1"
             ]
@@ -10996,7 +10997,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -11018,7 +11019,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "firefox",
+            "fingerprint": "qq",
             "alpn": [
               "http/1.1"
             ]
@@ -11430,7 +11431,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -11452,7 +11453,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "ios",
+            "fingerprint": "safari",
             "alpn": [
               "http/1.1"
             ]
@@ -11864,7 +11865,7 @@
         "settings": {
           "servers": [
             {
-              "address": "8.47.69.0",
+              "address": "45.131.4.38",
               "port": 443,
               "password": "humanity"
             }
@@ -11886,7 +11887,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "qq",
+            "fingerprint": "unsafe",
             "alpn": [
               "http/1.1"
             ]
@@ -12320,7 +12321,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "safari",
+            "fingerprint": "android",
             "alpn": [
               "http/1.1"
             ]
@@ -12754,7 +12755,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "unsafe",
+            "fingerprint": "edge",
             "alpn": [
               "http/1.1"
             ]
@@ -13188,7 +13189,10 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "android"
+            "fingerprint": "firefox",
+            "alpn": [
+              "http/1.1"
+            ]
           }
         }
       },
@@ -13619,7 +13623,10 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "chrome"
+            "fingerprint": "ios",
+            "alpn": [
+              "http/1.1"
+            ]
           }
         }
       },
@@ -14050,7 +14057,10 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "edge"
+            "fingerprint": "qq",
+            "alpn": [
+              "http/1.1"
+            ]
           }
         }
       },
@@ -14481,7 +14491,10 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "firefox"
+            "fingerprint": "safari",
+            "alpn": [
+              "http/1.1"
+            ]
           }
         }
       },
@@ -14912,7 +14925,10 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "ios"
+            "fingerprint": "unsafe",
+            "alpn": [
+              "http/1.1"
+            ]
           }
         }
       },
@@ -15343,7 +15359,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "qq"
+            "fingerprint": "android"
           }
         }
       },
@@ -15774,7 +15790,7 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "www.pleadcourt.org",
-            "fingerprint": "safari"
+            "fingerprint": "chrome"
           }
         }
       },
@@ -15853,5 +15869,2160 @@
       ]
     },
     "remarks": "37 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "8.47.69.0",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "edge"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "38 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "8.47.69.0",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "firefox"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "39 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "8.47.69.0",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "ios"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "40 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "8.47.69.0",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "qq"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "41 ◻️ TROJAN · WS | кандидат"
+  },
+  {
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112"
+        ],
+        "dns.adguard-dns.com": [
+          "94.140.14.14",
+          "94.140.15.15"
+        ],
+        "freedns.controld.com": [
+          "76.76.2.0",
+          "76.76.10.0"
+        ],
+        "dns.mullvad.net": [
+          "194.242.2.2"
+        ],
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "doh.opendns.com": [
+          "208.67.222.222",
+          "208.67.220.220"
+        ],
+        "doh.libredns.gr": [
+          "116.202.176.26"
+        ],
+        "doh.dns4all.eu": [
+          "194.0.5.3"
+        ],
+        "wikimedia-dns.org": [
+          "185.71.138.138"
+        ],
+        "dns.hostux.net": [
+          "46.226.108.173",
+          "46.226.109.82"
+        ],
+        "blank.dnsforge.de": [
+          "138.199.149.249",
+          "78.47.71.194"
+        ]
+      },
+      "servers": [
+        {
+          "address": "tcp+local://8.8.8.8:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://8.8.4.4:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://9.9.9.9:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://94.140.14.14:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.2.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://76.76.10.0:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.0.0.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://1.1.1.1:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.220.220:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        {
+          "address": "tcp+local://208.67.222.222:53",
+          "domains": [
+            "full:dns.google",
+            "full:dns.quad9.net",
+            "full:dns.adguard-dns.com",
+            "full:freedns.controld.com",
+            "full:dns.mullvad.net",
+            "full:cloudflare-dns.com",
+            "full:doh.opendns.com",
+            "full:doh.libredns.gr",
+            "full:doh.dns4all.eu",
+            "full:wikimedia-dns.org",
+            "full:dns.hostux.net",
+            "full:blank.dnsforge.de"
+          ],
+          "skipFallback": true,
+          "queryStrategy": "UseIPv4",
+          "timeoutMs": 4000
+        },
+        "https://dns.google/dns-query",
+        "https://dns.quad9.net/dns-query",
+        "https://dns.adguard-dns.com/dns-query",
+        "https://freedns.controld.com/p0",
+        "https://dns.mullvad.net/dns-query",
+        "https://cloudflare-dns.com/dns-query",
+        "https://doh.opendns.com/dns-query",
+        "https://doh.libredns.gr/dns-query",
+        "https://doh.dns4all.eu/dns-query",
+        "https://wikimedia-dns.org/dns-query",
+        "https://dns.hostux.net/dns-query",
+        "https://blank.dnsforge.de/dns-query"
+      ],
+      "queryStrategy": "UseIPv4",
+      "disableCache": false,
+      "serveStale": true,
+      "useSystemHosts": true,
+      "enableParallelQuery": true,
+      "tag": "dns-remote",
+      "disableFallbackIfMatch": true
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "metadataOnly": false
+        }
+      },
+      {
+        "tag": "dns-in",
+        "listen": "127.0.0.1",
+        "port": 10853,
+        "protocol": "dokodemo-door",
+        "settings": {
+          "address": "1.1.1.1",
+          "port": 53,
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "8.47.69.0",
+              "port": 443,
+              "password": "humanity"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "sockopt": {
+            "tcpKeepAliveIdle": 300,
+            "tcpKeepAliveInterval": 60,
+            "dialerProxy": "fragment"
+          },
+          "wsSettings": {
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "www.pleadcourt.org",
+            "fingerprint": "safari"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {
+          "network": "tcp,udp"
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "domainMatcher": "hybrid",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-remote"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "full:localhost",
+            "domain:local",
+            "domain:lan",
+            "regexp:^[^.]+$"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "remarks": "42 ◻️ TROJAN · WS | кандидат"
   }
 ]
