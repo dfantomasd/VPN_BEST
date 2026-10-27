@@ -10,13 +10,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "64.188.66.181",
+              "address": "94.183.197.40",
               "port": 443,
               "users": [
                 {
-                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "id": "f439e4fe-139b-4882-ad8b-a16176d09c88",
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "flow": ""
                 }
               ]
             }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "ge-s-1.pythonmakemigreat.wiki",
-            "fingerprint": "chrome",
-            "publicKey": "5fkwwCKZzMsE6Eb_b3iqluu-1AWIfnYl-p0N3EL9Al8",
-            "shortId": "2c9a2790ad5900b2",
+            "serverName": "de2.cdn77.icu",
+            "fingerprint": "safari",
+            "publicKey": "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8",
+            "shortId": "1ed136481e0ede74",
             "spiderX": "/"
           }
         }
@@ -66,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 5.2 Mbps | igareck-main | a04d6d4740b4"
+    "remarks": "TEST | 5.0 Mbps | igareck-mobile | 188bb86b87dd"
   },
   {
     "log": {
@@ -79,7 +79,7 @@
         "settings": {
           "vnext": [
             {
-              "address": "64.188.66.181",
+              "address": "sw.golangwikito.cfd",
               "port": 443,
               "users": [
                 {
@@ -95,10 +95,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "ge-s-1.pythonmakemigreat.wiki",
-            "fingerprint": "random",
-            "publicKey": "5fkwwCKZzMsE6Eb_b3iqluu-1AWIfnYl-p0N3EL9Al8",
-            "shortId": "2c9a2790ad5900b2",
+            "serverName": "sw.golangwikito.cfd",
+            "fingerprint": "chrome",
+            "publicKey": "Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg",
+            "shortId": "a1037b25dcef6aa7",
             "spiderX": "/"
           }
         }
@@ -135,6 +135,75 @@
         }
       }
     ],
-    "remarks": "TEST | 5.2 Mbps | igareck-main | f0eecdd2ad79"
+    "remarks": "TEST | 5.0 Mbps | igareck-main | 6c5b49f20b21"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "94.183.197.40",
+              "port": 443,
+              "users": [
+                {
+                  "id": "f439e4fe-139b-4882-ad8b-a16176d09c88",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "de2.cdn77.icu",
+            "fingerprint": "qq",
+            "publicKey": "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8",
+            "shortId": "1ed136481e0ede74",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.0 Mbps | igareck-mobile | 59cbc5671b3a"
   }
 ]
