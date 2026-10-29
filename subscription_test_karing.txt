@@ -1,7 +1,10 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 6.8 Mbps | igareck-main | f45a30fcb2af", "udp": true, "type": "vless", "server": "areal3.greewebservices.ir", "port": 4445, "uuid": "a7e9fc98-25a2-4801-961c-7a6ed9d69328", "network": "tcp", "tls": true, "servername": "amp-api-edge.apps.apple.com", "client-fingerprint": "edge", "reality-opts": {"public-key": "xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8", "short-id": "e3085d4fc679ba12"}}
+  - {"name": "TEST | 16.3 Mbps | igareck-main | 8fcb8ace4e88", "udp": true, "type": "vless", "server": "199.127.153.13", "port": 43000, "uuid": "cb06778c-91e6-480a-a791-a49dcfa940d5", "network": "tcp", "tls": true, "servername": "199.127.153.13", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "iLJlXL4PvOVex6GXgDLywQQ_j6_uJ7YMVlePIYwceF8", "short-id": "1a72a06c"}}
+  - {"name": "TEST | 16.1 Mbps | igareck-main | 0e1704ff636d", "udp": true, "type": "vless", "server": "199.127.153.13", "port": 43000, "uuid": "cb06778c-91e6-480a-a791-a49dcfa940d5", "network": "tcp", "tls": true, "servername": "199.127.153.13", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "iLJlXL4PvOVex6GXgDLywQQ_j6_uJ7YMVlePIYwceF8", "short-id": "1a72a06c"}}
+  - {"name": "TEST | 7.5 Mbps | igareck-main | a08bfd099998", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
+  - {"name": "TEST | 6.0 Mbps | igareck-main | baef2fa54bd9", "udp": true, "type": "vless", "server": "212.50.249.30", "port": 443, "uuid": "350d1a28-f365-4a18-b83a-26f183f60d0d", "network": "tcp", "tls": true, "servername": "vps.aisiwei.top", "client-fingerprint": "chrome"}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 6.8 Mbps | igareck-main | f45a30fcb2af"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 16.3 Mbps | igareck-main | 8fcb8ace4e88", "TEST | 16.1 Mbps | igareck-main | 0e1704ff636d", "TEST | 7.5 Mbps | igareck-main | a08bfd099998", "TEST | 6.0 Mbps | igareck-main | baef2fa54bd9"]}
 rules:
   - "MATCH,TEST"
