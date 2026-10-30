@@ -1,8 +1,7 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 9.1 Mbps | igareck-main | ad28c84530a5", "udp": true, "type": "vless", "server": "94.249.186.64", "port": 43000, "uuid": "4421e4d5-6869-4a45-a76b-5c822aac776d", "network": "tcp", "tls": true, "servername": "94.249.186.64", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "QaPoY-5W4Z7NA_LUG37yjYNy3JWg53Ru7eWLTzec-nE", "short-id": "b62ac375"}}
-  - {"name": "TEST | 9.0 Mbps | igareck-main | 6c2c9e37451a", "udp": true, "type": "vless", "server": "94.249.187.46", "port": 43000, "uuid": "53e31ee1-0a75-48c8-82fd-a54c8728ed9d", "network": "tcp", "tls": true, "servername": "94.249.187.46", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "9JxTswHvWeq5349tgvXL7fDWaWuCb3jstVS7e6daAD4", "short-id": "81a5b989"}}
+  - {"name": "TEST | 7.2 Mbps | igareck-main | c6d1192442ef", "udp": true, "type": "vless", "server": "144.31.140.125", "port": 8443, "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0", "network": "tcp", "tls": true, "servername": "twitch.tv", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo", "short-id": "168c15efac9df5fd"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 9.1 Mbps | igareck-main | ad28c84530a5", "TEST | 9.0 Mbps | igareck-main | 6c2c9e37451a"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 7.2 Mbps | igareck-main | c6d1192442ef"]}
 rules:
   - "MATCH,TEST"
