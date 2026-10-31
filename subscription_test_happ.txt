@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "144.31.140.125",
-              "port": 8443,
+              "address": "189.74.106.74",
+              "port": 443,
               "users": [
                 {
-                  "id": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+                  "id": "6788563f-df4b-4363-aa71-cd50c4b03cd8",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "twitch.tv",
-            "fingerprint": "firefox",
-            "publicKey": "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo",
-            "shortId": "168c15efac9df5fd",
+            "serverName": "api.setevoypriliv.cc",
+            "fingerprint": "safari",
+            "publicKey": "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs",
+            "shortId": "a8",
             "spiderX": "/"
           }
         }
@@ -66,6 +66,144 @@
         }
       }
     ],
-    "remarks": "TEST | 7.2 Mbps | igareck-main | c6d1192442ef"
+    "remarks": "TEST | 5.6 Mbps | igareck-whitelist | 033689ab0c83"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "177.1.192.60",
+              "port": 443,
+              "users": [
+                {
+                  "id": "706bce83-91db-4260-b175-cba29145cd56",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "up9.uni-plan.com",
+            "fingerprint": "firefox",
+            "publicKey": "buSnorZ-jmpZiXDycnqURwonsk0h2aq4PMHHORh35BY",
+            "shortId": "984352d1f332becb",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.5 Mbps | igareck-main | 0996c08f0d69"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "177.1.192.175",
+              "port": 443,
+              "users": [
+                {
+                  "id": "706bce83-91db-4260-b175-cba29145cd56",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "up10.uni-plan.com",
+            "fingerprint": "firefox",
+            "publicKey": "L57KvMXvA8ORNMp0ofjVyWvLvwt8jLA3t5p1F6rthl0",
+            "shortId": "82ee685ca04f7529",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.4 Mbps | igareck-main | beab460cdc2b"
   }
 ]

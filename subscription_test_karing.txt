@@ -1,7 +1,9 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 7.2 Mbps | igareck-main | c6d1192442ef", "udp": true, "type": "vless", "server": "144.31.140.125", "port": 8443, "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0", "network": "tcp", "tls": true, "servername": "twitch.tv", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo", "short-id": "168c15efac9df5fd"}}
+  - {"name": "TEST | 5.6 Mbps | igareck-whitelist | 033689ab0c83", "udp": true, "type": "vless", "server": "189.74.106.74", "port": 443, "uuid": "6788563f-df4b-4363-aa71-cd50c4b03cd8", "network": "tcp", "tls": true, "servername": "api.setevoypriliv.cc", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs", "short-id": "a8"}}
+  - {"name": "TEST | 5.5 Mbps | igareck-main | 0996c08f0d69", "udp": true, "type": "vless", "server": "177.1.192.60", "port": 443, "uuid": "706bce83-91db-4260-b175-cba29145cd56", "network": "tcp", "tls": true, "servername": "up9.uni-plan.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "buSnorZ-jmpZiXDycnqURwonsk0h2aq4PMHHORh35BY", "short-id": "984352d1f332becb"}}
+  - {"name": "TEST | 5.4 Mbps | igareck-main | beab460cdc2b", "udp": true, "type": "vless", "server": "177.1.192.175", "port": 443, "uuid": "706bce83-91db-4260-b175-cba29145cd56", "network": "tcp", "tls": true, "servername": "up10.uni-plan.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "L57KvMXvA8ORNMp0ofjVyWvLvwt8jLA3t5p1F6rthl0", "short-id": "82ee685ca04f7529"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 7.2 Mbps | igareck-main | c6d1192442ef"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.6 Mbps | igareck-whitelist | 033689ab0c83", "TEST | 5.5 Mbps | igareck-main | 0996c08f0d69", "TEST | 5.4 Mbps | igareck-main | beab460cdc2b"]}
 rules:
   - "MATCH,TEST"
