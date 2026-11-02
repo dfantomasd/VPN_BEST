@@ -1,8 +1,9 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 6.3 Mbps | igareck-main | 5fbc00f85d24", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
-  - {"name": "TEST | 5.5 Mbps | igareck-main | 58120f61e7a9", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
+  - {"name": "TEST | 7.5 Mbps | igareck-main | 812609e80c5f", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "qq", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
+  - {"name": "TEST | 7.4 Mbps | igareck-main | 5fbc00f85d24", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
+  - {"name": "TEST | 7.4 Mbps | igareck-main | f648fc8bc9fa", "udp": true, "type": "vless", "server": "fr.golangwikito.cfd", "port": 443, "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7", "network": "tcp", "tls": true, "servername": "fr.golangwikito.cfd", "client-fingerprint": "random", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 6.3 Mbps | igareck-main | 5fbc00f85d24", "TEST | 5.5 Mbps | igareck-main | 58120f61e7a9"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 7.5 Mbps | igareck-main | 812609e80c5f", "TEST | 7.4 Mbps | igareck-main | 5fbc00f85d24", "TEST | 7.4 Mbps | igareck-main | f648fc8bc9fa"]}
 rules:
   - "MATCH,TEST"

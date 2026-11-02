@@ -27,6 +27,75 @@
           "security": "reality",
           "realitySettings": {
             "serverName": "fr.golangwikito.cfd",
+            "fingerprint": "qq",
+            "publicKey": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA",
+            "shortId": "e6d589857d1cec5e",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 7.5 Mbps | igareck-main | 812609e80c5f"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fr.golangwikito.cfd",
+              "port": 443,
+              "users": [
+                {
+                  "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "fr.golangwikito.cfd",
             "fingerprint": "chrome",
             "publicKey": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA",
             "shortId": "e6d589857d1cec5e",
@@ -66,7 +135,7 @@
         }
       }
     ],
-    "remarks": "TEST | 6.3 Mbps | igareck-main | 5fbc00f85d24"
+    "remarks": "TEST | 7.4 Mbps | igareck-main | 5fbc00f85d24"
   },
   {
     "log": {
@@ -96,7 +165,7 @@
           "security": "reality",
           "realitySettings": {
             "serverName": "fr.golangwikito.cfd",
-            "fingerprint": "firefox",
+            "fingerprint": "random",
             "publicKey": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA",
             "shortId": "e6d589857d1cec5e",
             "spiderX": "/"
@@ -135,6 +204,6 @@
         }
       }
     ],
-    "remarks": "TEST | 5.5 Mbps | igareck-main | 58120f61e7a9"
+    "remarks": "TEST | 7.4 Mbps | igareck-main | f648fc8bc9fa"
   }
 ]
