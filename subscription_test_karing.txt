@@ -1,7 +1,8 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 5.7 Mbps | igareck-main | 585201f4393a", "udp": true, "type": "vless", "server": "85.31.148.250", "port": 446, "uuid": "cdf4bc13-31e6-4bff-962c-05fe9151c593", "network": "tcp", "tls": true, "servername": "nl2.vrsvpn.com", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "rk3eixZgzGiz0HWQyMAJ1wRutvlMM1ZfoiCXec3fHE4", "short-id": "14ba28f812ad1f22"}}
+  - {"name": "TEST | 7.2 Mbps | igareck-main | 4738591cc3d0", "udp": true, "type": "vless", "server": "5.231.45.196", "port": 443, "uuid": "555b35c4-30f9-40c6-a61a-7f53ab1bea45", "network": "tcp", "tls": true, "servername": "images.porsche.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk", "short-id": "1a2b3c4d"}}
+  - {"name": "TEST | 6.8 Mbps | igareck-main | a5baa78b4ac3", "udp": true, "type": "vless", "server": "5.231.45.196", "port": 443, "uuid": "555b35c4-30f9-40c6-a61a-7f53ab1bea45", "network": "tcp", "tls": true, "servername": "images.porsche.com", "client-fingerprint": "ios", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk", "short-id": "1a2b3c4d"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.7 Mbps | igareck-main | 585201f4393a"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 7.2 Mbps | igareck-main | 4738591cc3d0", "TEST | 6.8 Mbps | igareck-main | a5baa78b4ac3"]}
 rules:
   - "MATCH,TEST"

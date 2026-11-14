@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "85.31.148.250",
-              "port": 446,
+              "address": "5.231.45.196",
+              "port": 443,
               "users": [
                 {
-                  "id": "cdf4bc13-31e6-4bff-962c-05fe9151c593",
+                  "id": "555b35c4-30f9-40c6-a61a-7f53ab1bea45",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "nl2.vrsvpn.com",
-            "fingerprint": "safari",
-            "publicKey": "rk3eixZgzGiz0HWQyMAJ1wRutvlMM1ZfoiCXec3fHE4",
-            "shortId": "14ba28f812ad1f22",
+            "serverName": "images.porsche.com",
+            "fingerprint": "firefox",
+            "publicKey": "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk",
+            "shortId": "1a2b3c4d",
             "spiderX": "/"
           }
         }
@@ -66,6 +66,75 @@
         }
       }
     ],
-    "remarks": "TEST | 5.7 Mbps | igareck-main | 585201f4393a"
+    "remarks": "TEST | 7.2 Mbps | igareck-main | 4738591cc3d0"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "5.231.45.196",
+              "port": 443,
+              "users": [
+                {
+                  "id": "555b35c4-30f9-40c6-a61a-7f53ab1bea45",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "images.porsche.com",
+            "fingerprint": "ios",
+            "publicKey": "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk",
+            "shortId": "1a2b3c4d",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.8 Mbps | igareck-main | a5baa78b4ac3"
   }
 ]
