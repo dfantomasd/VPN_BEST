@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "share.gifmems.com",
+              "address": "80.79.121.156",
               "port": 443,
               "users": [
                 {
-                  "id": "31e407b3-6e1e-425f-98ea-fcf8f494c6a0",
+                  "id": "6ab79fec-ca02-447b-b7be-5945f6e6ea8f",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +26,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "share.gifmems.com",
-            "fingerprint": "qq",
-            "publicKey": "UGQPJAkxXArjmKVbPQ4ZDSh3hVrs9RhFPmjFAvDi5Q0",
-            "shortId": "668aabc33312234d",
+            "serverName": "archive-eu-west.livemusic.ac",
+            "fingerprint": "chrome",
+            "publicKey": "x9HClr5eRPhMPuBIndkjqFU_0D0M-p4sJVAxuTP68kM",
+            "shortId": "dcfad1cc10d0d15b",
             "spiderX": "/"
           }
         }
@@ -66,6 +66,75 @@
         }
       }
     ],
-    "remarks": "TEST | 5.1 Mbps | igareck-main | 350e4c65883a"
+    "remarks": "TEST | 5.1 Mbps | igareck-main | 1b0d8e1737c0"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "31.59.154.82",
+              "port": 8459,
+              "users": [
+                {
+                  "id": "11f48e58-bdd8-4251-ba00-ad05d05d9dcf",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "nl-edge.airlinesvpn.com",
+            "fingerprint": "firefox",
+            "publicKey": "mTSn98b4yZG3im3ITn-kNLPbT8ljc9ILvAqiT4jyKXk",
+            "shortId": "0f0e381ec0c4690d",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.0 Mbps | igareck-mobile | 08984fec5a2e"
   }
 ]
