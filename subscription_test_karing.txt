@@ -1,8 +1,8 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 5.1 Mbps | igareck-main | 1b0d8e1737c0", "udp": true, "type": "vless", "server": "80.79.121.156", "port": 443, "uuid": "6ab79fec-ca02-447b-b7be-5945f6e6ea8f", "network": "tcp", "tls": true, "servername": "archive-eu-west.livemusic.ac", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "x9HClr5eRPhMPuBIndkjqFU_0D0M-p4sJVAxuTP68kM", "short-id": "dcfad1cc10d0d15b"}}
-  - {"name": "TEST | 5.0 Mbps | igareck-mobile | 08984fec5a2e", "udp": true, "type": "vless", "server": "31.59.154.82", "port": 8459, "uuid": "11f48e58-bdd8-4251-ba00-ad05d05d9dcf", "network": "tcp", "tls": true, "servername": "nl-edge.airlinesvpn.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "mTSn98b4yZG3im3ITn-kNLPbT8ljc9ILvAqiT4jyKXk", "short-id": "0f0e381ec0c4690d"}}
+  - {"name": "TEST | 5.6 Mbps | igareck-whitelist | e19407320ad1", "udp": true, "type": "vless", "server": "lt-tcp.h1.vpnprime.ru", "port": 443, "uuid": "9c462694-93fe-4b43-a3a1-bc458d65de82", "network": "tcp", "tls": true, "servername": "a96401t.lt3.h1clayd.click", "client-fingerprint": "firefox", "reality-opts": {"public-key": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls", "short-id": "d50682df18259eac"}}
+  - {"name": "TEST | 5.2 Mbps | igareck-whitelist | b72b2d175af9", "udp": true, "type": "vless", "server": "lt-tcp.h1.vpnprime.ru", "port": 443, "uuid": "9c462694-93fe-4b43-a3a1-bc458d65de82", "network": "tcp", "tls": true, "servername": "a96401t.lt3.h1clayd.click", "client-fingerprint": "qq", "reality-opts": {"public-key": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls", "short-id": "d50682df18259eac"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.1 Mbps | igareck-main | 1b0d8e1737c0", "TEST | 5.0 Mbps | igareck-mobile | 08984fec5a2e"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.6 Mbps | igareck-whitelist | e19407320ad1", "TEST | 5.2 Mbps | igareck-whitelist | b72b2d175af9"]}
 rules:
   - "MATCH,TEST"
