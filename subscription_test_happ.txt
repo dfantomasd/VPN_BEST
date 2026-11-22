@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "lt-tcp.h1.vpnprime.ru",
-              "port": 443,
+              "address": "198.200.37.74",
+              "port": 20002,
               "users": [
                 {
-                  "id": "9c462694-93fe-4b43-a3a1-bc458d65de82",
+                  "id": "0167ecdc-c5df-4b55-b129-00eb5e953553",
                   "encryption": "none",
                   "flow": ""
                 }
@@ -24,13 +24,10 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "a96401t.lt3.h1clayd.click",
-            "fingerprint": "firefox",
-            "publicKey": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls",
-            "shortId": "d50682df18259eac",
-            "spiderX": "/"
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "6r.770704.xyz",
+            "fingerprint": "firefox"
           }
         }
       },
@@ -66,75 +63,6 @@
         }
       }
     ],
-    "remarks": "TEST | 5.6 Mbps | igareck-whitelist | e19407320ad1"
-  },
-  {
-    "log": {
-      "loglevel": "none"
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "lt-tcp.h1.vpnprime.ru",
-              "port": 443,
-              "users": [
-                {
-                  "id": "9c462694-93fe-4b43-a3a1-bc458d65de82",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "a96401t.lt3.h1clayd.click",
-            "fingerprint": "qq",
-            "publicKey": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls",
-            "shortId": "d50682df18259eac",
-            "spiderX": "/"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      }
-    ],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "remarks": "TEST | 5.2 Mbps | igareck-whitelist | b72b2d175af9"
+    "remarks": "TEST | 11.5 Mbps | igareck-main | ede875ba79f1"
   }
 ]

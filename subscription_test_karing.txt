@@ -1,8 +1,7 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 5.6 Mbps | igareck-whitelist | e19407320ad1", "udp": true, "type": "vless", "server": "lt-tcp.h1.vpnprime.ru", "port": 443, "uuid": "9c462694-93fe-4b43-a3a1-bc458d65de82", "network": "tcp", "tls": true, "servername": "a96401t.lt3.h1clayd.click", "client-fingerprint": "firefox", "reality-opts": {"public-key": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls", "short-id": "d50682df18259eac"}}
-  - {"name": "TEST | 5.2 Mbps | igareck-whitelist | b72b2d175af9", "udp": true, "type": "vless", "server": "lt-tcp.h1.vpnprime.ru", "port": 443, "uuid": "9c462694-93fe-4b43-a3a1-bc458d65de82", "network": "tcp", "tls": true, "servername": "a96401t.lt3.h1clayd.click", "client-fingerprint": "qq", "reality-opts": {"public-key": "QZsbrRTzJ-nze9D4BJxREqxDBExpyszYpdkK9qO8Jls", "short-id": "d50682df18259eac"}}
+  - {"name": "TEST | 11.5 Mbps | igareck-main | ede875ba79f1", "udp": true, "type": "vless", "server": "198.200.37.74", "port": 20002, "uuid": "0167ecdc-c5df-4b55-b129-00eb5e953553", "network": "tcp", "tls": true, "servername": "6r.770704.xyz", "client-fingerprint": "firefox"}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.6 Mbps | igareck-whitelist | e19407320ad1", "TEST | 5.2 Mbps | igareck-whitelist | b72b2d175af9"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 11.5 Mbps | igareck-main | ede875ba79f1"]}
 rules:
   - "MATCH,TEST"
