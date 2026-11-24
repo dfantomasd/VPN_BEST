@@ -1,7 +1,8 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 5.9 Mbps | igareck-main | b2a63989e070", "udp": true, "type": "vless", "server": "uuyjnfbv.localip.ir", "port": 2087, "uuid": "92a188aa-2e86-4557-bd30-b2079a70f824", "network": "tcp", "tls": true, "servername": "uuyjnfbv.localip.ir", "client-fingerprint": "chrome"}
+  - {"name": "TEST | 6.1 Mbps | igareck-main | e05416381333", "udp": true, "type": "vless", "server": "185.200.199.122", "port": 443, "uuid": "04920673-035c-410d-94e4-5b1469d3fb6f", "network": "tcp", "tls": true, "servername": "185.200.199.122", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "alpn": ["h2", "http/1.1"]}
+  - {"name": "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c", "udp": true, "type": "vless", "server": "185.200.199.122", "port": 443, "uuid": "04920673-035c-410d-94e4-5b1469d3fb6f", "network": "tcp", "tls": true, "servername": "185.200.199.122", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision"}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.9 Mbps | igareck-main | b2a63989e070"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 6.1 Mbps | igareck-main | e05416381333", "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c"]}
 rules:
   - "MATCH,TEST"

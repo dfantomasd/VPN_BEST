@@ -10,13 +10,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "uuyjnfbv.localip.ir",
-              "port": 2087,
+              "address": "185.200.199.122",
+              "port": 443,
               "users": [
                 {
-                  "id": "92a188aa-2e86-4557-bd30-b2079a70f824",
+                  "id": "04920673-035c-410d-94e4-5b1469d3fb6f",
                   "encryption": "none",
-                  "flow": ""
+                  "flow": "xtls-rprx-vision"
                 }
               ]
             }
@@ -26,7 +26,77 @@
           "network": "tcp",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "uuyjnfbv.localip.ir",
+            "serverName": "185.200.199.122",
+            "fingerprint": "chrome",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.1 Mbps | igareck-main | e05416381333"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "185.200.199.122",
+              "port": 443,
+              "users": [
+                {
+                  "id": "04920673-035c-410d-94e4-5b1469d3fb6f",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "185.200.199.122",
             "fingerprint": "chrome"
           }
         }
@@ -63,6 +133,6 @@
         }
       }
     ],
-    "remarks": "TEST | 5.9 Mbps | igareck-main | b2a63989e070"
+    "remarks": "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c"
   }
 ]
