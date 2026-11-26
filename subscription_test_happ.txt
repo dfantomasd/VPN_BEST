@@ -10,11 +10,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "185.200.199.122",
-              "port": 443,
+              "address": "109.248.239.190",
+              "port": 8443,
               "users": [
                 {
-                  "id": "04920673-035c-410d-94e4-5b1469d3fb6f",
+                  "id": "8f092ef0-a7e6-03e9-b989-836aebc00ff7",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -24,14 +24,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "185.200.199.122",
-            "fingerprint": "chrome",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ya.ru",
+            "fingerprint": "safari",
+            "publicKey": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY",
+            "shortId": "abc123",
+            "spiderX": "/"
           }
         }
       },
@@ -67,7 +66,7 @@
         }
       }
     ],
-    "remarks": "TEST | 6.1 Mbps | igareck-main | e05416381333"
+    "remarks": "TEST | 5.4 Mbps | igareck-whitelist | 905c2fa0f7de"
   },
   {
     "log": {
@@ -80,11 +79,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "185.200.199.122",
-              "port": 443,
+              "address": "109.248.239.190",
+              "port": 8443,
               "users": [
                 {
-                  "id": "04920673-035c-410d-94e4-5b1469d3fb6f",
+                  "id": "8f092ef0-a7e6-03e9-b989-836aebc00ff7",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -94,10 +93,13 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "185.200.199.122",
-            "fingerprint": "chrome"
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ya.ru",
+            "fingerprint": "qq",
+            "publicKey": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY",
+            "shortId": "abc123",
+            "spiderX": "/"
           }
         }
       },
@@ -133,6 +135,144 @@
         }
       }
     ],
-    "remarks": "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c"
+    "remarks": "TEST | 5.3 Mbps | igareck-whitelist | fd92eadf5331"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "109.248.239.190",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "8f092ef0-a7e6-03e9-b989-836aebc00ff7",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ya.ru",
+            "fingerprint": "ios",
+            "publicKey": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY",
+            "shortId": "abc123",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.3 Mbps | igareck-whitelist | f8ffdd4cce36"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "109.248.239.190",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "8f092ef0-a7e6-03e9-b989-836aebc00ff7",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ya.ru",
+            "fingerprint": "chrome",
+            "publicKey": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY",
+            "shortId": "abc123",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.3 Mbps | igareck-whitelist | eeca1bec50b5"
   }
 ]

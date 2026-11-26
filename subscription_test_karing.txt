@@ -1,8 +1,10 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 6.1 Mbps | igareck-main | e05416381333", "udp": true, "type": "vless", "server": "185.200.199.122", "port": 443, "uuid": "04920673-035c-410d-94e4-5b1469d3fb6f", "network": "tcp", "tls": true, "servername": "185.200.199.122", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "alpn": ["h2", "http/1.1"]}
-  - {"name": "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c", "udp": true, "type": "vless", "server": "185.200.199.122", "port": 443, "uuid": "04920673-035c-410d-94e4-5b1469d3fb6f", "network": "tcp", "tls": true, "servername": "185.200.199.122", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision"}
+  - {"name": "TEST | 5.4 Mbps | igareck-whitelist | 905c2fa0f7de", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
+  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | fd92eadf5331", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "qq", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
+  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | f8ffdd4cce36", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "ios", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
+  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | eeca1bec50b5", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 6.1 Mbps | igareck-main | e05416381333", "TEST | 6.0 Mbps | igareck-main | a9caf6b7d75c"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.4 Mbps | igareck-whitelist | 905c2fa0f7de", "TEST | 5.3 Mbps | igareck-whitelist | fd92eadf5331", "TEST | 5.3 Mbps | igareck-whitelist | f8ffdd4cce36", "TEST | 5.3 Mbps | igareck-whitelist | eeca1bec50b5"]}
 rules:
   - "MATCH,TEST"
