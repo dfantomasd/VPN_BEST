@@ -1,10 +1,7 @@
 mode: "rule"
 proxies:
-  - {"name": "TEST | 5.4 Mbps | igareck-whitelist | 905c2fa0f7de", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "safari", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
-  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | fd92eadf5331", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "qq", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
-  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | f8ffdd4cce36", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "ios", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
-  - {"name": "TEST | 5.3 Mbps | igareck-whitelist | eeca1bec50b5", "udp": true, "type": "vless", "server": "109.248.239.190", "port": 8443, "uuid": "8f092ef0-a7e6-03e9-b989-836aebc00ff7", "network": "tcp", "tls": true, "servername": "ya.ru", "client-fingerprint": "chrome", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY", "short-id": "abc123"}}
+  - {"name": "TEST | 18.5 Mbps | igareck-main | ae3ae1332ac8", "udp": true, "type": "vless", "server": "184.107.179.150", "port": 8443, "uuid": "d3895603-3164-4003-b85c-70f171ab30b5", "network": "tcp", "tls": true, "servername": "www.kpn.com", "client-fingerprint": "firefox", "flow": "xtls-rprx-vision", "reality-opts": {"public-key": "FZvOenkKu_0DspnZA7Nc7xgWhR0_Z0MvqhntPqPchV4", "short-id": "40a4615253b8f75d"}}
 proxy-groups:
-  - {"name": "TEST", "type": "select", "proxies": ["TEST | 5.4 Mbps | igareck-whitelist | 905c2fa0f7de", "TEST | 5.3 Mbps | igareck-whitelist | fd92eadf5331", "TEST | 5.3 Mbps | igareck-whitelist | f8ffdd4cce36", "TEST | 5.3 Mbps | igareck-whitelist | eeca1bec50b5"]}
+  - {"name": "TEST", "type": "select", "proxies": ["TEST | 18.5 Mbps | igareck-main | ae3ae1332ac8"]}
 rules:
   - "MATCH,TEST"
