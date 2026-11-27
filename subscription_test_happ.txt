@@ -10,11 +10,77 @@
         "settings": {
           "vnext": [
             {
-              "address": "184.107.179.150",
-              "port": 8443,
+              "address": "kuruish.org",
+              "port": 443,
               "users": [
                 {
-                  "id": "d3895603-3164-4003-b85c-70f171ab30b5",
+                  "id": "03fcc618-b93d-6796-6aed-8a38c975d581",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "kuruish.org",
+            "fingerprint": "chrome"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 13.8 Mbps | igareck-main | 9f2577fa924c"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "201.58.178.236",
+              "port": 443,
+              "users": [
+                {
+                  "id": "e894c08a-fecc-46f5-bf03-c95d0274c79d",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -26,10 +92,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.kpn.com",
+            "serverName": "lesson1.schoolpizorbz.xyz",
             "fingerprint": "firefox",
-            "publicKey": "FZvOenkKu_0DspnZA7Nc7xgWhR0_Z0MvqhntPqPchV4",
-            "shortId": "40a4615253b8f75d",
+            "publicKey": "AdOl7XVxVk4Yb_tBxjrG-FP5elV_V2MeI_6WVC4H41s",
+            "shortId": "d14566fcec627162",
             "spiderX": "/"
           }
         }
@@ -66,6 +132,213 @@
         }
       }
     ],
-    "remarks": "TEST | 18.5 Mbps | igareck-main | ae3ae1332ac8"
+    "remarks": "TEST | 7.1 Mbps | igareck-main | a964334530b8"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "48.102.138.212",
+              "port": 443,
+              "users": [
+                {
+                  "id": "e894c08a-fecc-46f5-bf03-c95d0274c79d",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "lesson13.schoolpizorbz.xyz",
+            "fingerprint": "firefox",
+            "publicKey": "luf3doVXhkblZF7R3E5m1hc_e6dYmEn2rrgoGBvQaEU",
+            "shortId": "68bf8009e520f8da",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.4 Mbps | igareck-main | ae66b83d8023"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "lesson13.schoolpizorbz.xyz",
+              "port": 443,
+              "users": [
+                {
+                  "id": "e894c08a-fecc-46f5-bf03-c95d0274c79d",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "lesson13.schoolpizorbz.xyz",
+            "fingerprint": "firefox",
+            "publicKey": "luf3doVXhkblZF7R3E5m1hc_e6dYmEn2rrgoGBvQaEU",
+            "shortId": "68bf8009e520f8da",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 6.2 Mbps | igareck-main | 9b40d7b1c3cb"
+  },
+  {
+    "log": {
+      "loglevel": "none"
+    },
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "bridge.funky-monkey.app",
+              "port": 443,
+              "users": [
+                {
+                  "id": "ea759639-a58c-4c46-8e0b-4cc834bf6658",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "steam-videos.cc",
+            "fingerprint": "firefox",
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
+            "shortId": "",
+            "spiderX": "/"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      }
+    ],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "proxy"
+        }
+      ]
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://8.8.4.4/dns-query"
+      ],
+      "queryStrategy": "UseIP"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "remarks": "TEST | 5.9 Mbps | igareck-main | 2e2346a845f0"
   }
 ]
